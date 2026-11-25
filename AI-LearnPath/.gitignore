@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.env
+venv/
+env/
+.venv/
+
+# ML Models (large binary files - document how to generate)
+ml/models/*.pkl
+ml/models/*.joblib
+ml/models/*.npy
+
+# Vector Store
+rag/vectorstore/chroma_db/
+*.faiss
+*.index
+
+# Node
+node_modules/
+dist/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+htmlcov/
+.coverage
+.pytest_cache/
+
+# Uploads
+backend/uploads/
+rag/knowledge_base/uploads/
+
+# Database
+*.db
+*.sqlite3

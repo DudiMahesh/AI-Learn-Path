@@ -1,0 +1,14 @@
+{
+  "1": {
+    "label": "Foundations Learner",
+    "description": "Prioritizes core NCERT concept grounding and prerequisite reinforcement."
+  },
+  "0": {
+    "label": "Skill Builder",
+    "description": "Balanced practice with targeted question drills and speed calibration."
+  },
+  "2": {
+    "label": "Advanced Specialist",
+    "description": "High-yield rank boosting with tricky mock assessments and timing optimization."
+  }
+}

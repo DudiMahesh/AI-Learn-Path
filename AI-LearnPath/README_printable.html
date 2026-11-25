@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI LearnPath — Project Documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.65;
+      color: #1e293b;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Title & Header Banner */
+    .doc-header {
+      border-bottom: 2px solid #10b981;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+
+    .badge-bar {
+      margin-bottom: 14px;
+      line-height: 2.2;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      margin-right: 8px;
+      border-radius: 9999px;
+      background-color: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #0f172a;
+      margin-top: 0;
+      margin-bottom: 8px;
+      letter-spacing: -0.025em;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 30px;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+
+    h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #334155;
+    }
+
+    /* Blockquotes */
+    blockquote {
+      margin: 15px 0;
+      padding: 10px 16px;
+      border-left: 4px solid #10b981;
+      background-color: #f8fafc;
+      border-radius: 0 8px 8px 0;
+      color: #047857;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    blockquote p {
+      margin: 0;
+      color: inherit;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 11.5px;
+      page-break-inside: avoid;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+      text-align: left;
+      padding: 9px 12px;
+      border: 1px solid #cbd5e1;
+    }
+
+    td {
+      padding: 8px 12px;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    /* Code Blocks & Inlines */
+    code {
+      font-family: 'JetBrains Mono', Consolas, Monaco, "Courier New", monospace;
+      font-size: 11.5px;
+      padding: 2px 6px;
+      background-color: #f1f5f9;
+      color: #0f766e;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre {
+      font-family: 'JetBrains Mono', Consolas, Monaco, "Courier New", monospace;
+      font-size: 11px;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      padding: 14px 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 16px 0;
+      line-height: 1.5;
+      page-break-inside: avoid;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      border: none;
+      font-size: inherit;
+    }
+
+    /* Lists */
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 14px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 4px;
+      color: #334155;
+    }
+
+    /* Horizontal Rules */
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 24px 0;
+    }
+
+    /* Links */
+    a {
+      color: #059669;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Print specifics */
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      pre, table {
+        page-break-inside: avoid;
+      }
+      h2, h3 {
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-header">
+    <div class="badge-bar">
+      <span class="badge">MCA Final Year Project</span>
+      <span class="badge">AI / EdTech Platform</span>
+      <span class="badge">Official Technical Specification</span>
+    </div>
+  </div>
+
+  <div class="markdown-body">
+    <h1 id="ai-learnpath">AI LearnPath 🎓</h1>
+<blockquote>
+<p><strong>Your Personalized Learning Journey</strong></p>
+</blockquote>
+<p>An AI-powered career learning platform that assesses students, predicts their skill levels, identifies skill gaps, recommends relevant learning content, generates and adapts personalized learning paths, and provides a RAG-powered learning assistant grounded in trusted educational content.</p>
+<p><strong>MCA Final Year Project</strong> | Full-Stack AI EdTech Platform</p>
+<hr />
+<h2 id="table-of-contents">📋 Table of Contents</h2>
+<ul>
+<li><a href="#problem-statement">Problem Statement</a></li>
+<li><a href="#objectives">Objectives</a></li>
+<li><a href="#solution-overview">Solution Overview</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#technology-stack">Technology Stack</a></li>
+<li><a href="#ml-algorithms">ML Algorithms</a></li>
+<li><a href="#rag-architecture">RAG Architecture</a></li>
+<li><a href="#database">Database</a></li>
+<li><a href="#api-reference">API Reference</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#training-ml-models">Training ML Models</a></li>
+<li><a href="#ingesting-rag-documents">Ingesting RAG Documents</a></li>
+<li><a href="#running-locally">Running Locally</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#deployment">Deployment</a></li>
+<li><a href="#limitations">Limitations</a></li>
+<li><a href="#future-enhancements">Future Enhancements</a></li>
+</ul>
+<hr />
+<h2 id="problem-statement">❓ Problem Statement</h2>
+<p>Traditional online learning platforms provide a one-size-fits-all approach to education. Students waste time learning what they already know or miss foundational skills required for their career goals. There is no intelligent assessment, no personalized path, and no adaptive mechanism that responds to individual progress.</p>
+<hr />
+<h2 id="objectives">🎯 Objectives</h2>
+<ol>
+<li>Automatically assess a student's current skill level through career-specific diagnostic assessments</li>
+<li>Use machine learning to predict performance and identify learning profiles</li>
+<li>Perform skill-gap analysis comparing current skills to career requirements</li>
+<li>Recommend learning content using NLP-based similarity (TF-IDF + Cosine)</li>
+<li>Generate a personalized, prerequisite-aware learning roadmap</li>
+<li>Continuously adapt the roadmap as the student progresses</li>
+<li>Provide a RAG-powered AI assistant grounded in the platform's knowledge base</li>
+</ol>
+<hr />
+<h2 id="solution-overview">💡 Solution Overview</h2>
+<pre><code>New User → Registration → Career Goal → Profile Setup → Diagnostic Quiz
+         → Random Forest (Skill Prediction) → K-Means (Learning Profile)
+         → Skill Gap Analysis → TF-IDF + Cosine (Recommendations)
+         → Personalized Learning Path → Learning → Assessment
+         → Adaptive Engine → Updated Path → RAG Learning Assistant
+         → Grounded Explanations with Source References
+</code></pre>
+<hr />
+<h2 id="features">✨ Features</h2>
+<h3 id="neet-ug-2026-medical-entrance-suite">NEET (UG) 2026 Medical Entrance Suite</h3>
+<ul>
+<li><strong>Single-Page PDF Study Material Reader</strong> — Dark theme (<code>#323232</code>), A4 paper sheet canvas, 16px custom scrollbar, floating zoom toolbar (50%–200%), and bottom navigation pill.</li>
+<li><strong>20-Unit Syllabus &amp; Sub-Topic Checklist</strong> — Interactive slide-out drawer tracking completion of all 20 units and individual concepts with progress counters.</li>
+<li><strong>Unit Mastery Quizzes (10+ Questions/Unit)</strong> — Dedicated chapter quizzes with instant evaluation, explanations, and $\ge 70\%$ unit completion unlocks.</li>
+<li><strong>Official NEET Previous Year Papers (PYQs)</strong> — Authentic NTA papers for 2024 (Code Q1), 2023 (Code E1), 2022 (Code T4), and 2021 (Code M1).</li>
+<li><strong>50-Question Model Practice Papers</strong> — Full 50-question examination tests for Physics, Chemistry, Biology (Botany &amp; Zoology), and Grand Mocks.</li>
+<li><strong>Dedicated NEET AI Tutor</strong> — Subject-specialized chat assistant for Physics numericals, Chemistry reaction mechanisms, and Biology NCERT concepts.</li>
+<li><strong>Interactive High-Yield Formula Sheets</strong> — Instant formula references with symbols, units, and common trap highlights.</li>
+</ul>
+<h3 id="core-ai-features">Core AI Features</h3>
+<ul>
+<li><strong>Career-Specific Diagnostic Assessment</strong> — Different quiz for each career goal</li>
+<li><strong>Random Forest Skill Prediction</strong> — Classifies student as Beginner/Intermediate/Advanced</li>
+<li><strong>K-Means Learning Profiling</strong> — Clusters students into Foundation/Skill Builder/Advanced Learner</li>
+<li><strong>Skill Gap Analysis</strong> — Compares required vs current skill levels per career</li>
+<li><strong>TF-IDF + Cosine Recommendation Engine</strong> — Matches student needs to course content</li>
+<li><strong>Adaptive Learning Engine</strong> — Adjusts learning path based on assessment performance</li>
+<li><strong>RAG Learning Assistant</strong> — Answers questions using the platform's indexed knowledge base</li>
+</ul>
+<h3 id="platform-features">Platform Features</h3>
+<ul>
+<li>Dynamic time-based greeting (Morning/Afternoon/Evening/Night)</li>
+<li>Personalized learning path with prerequisites</li>
+<li>Real-time progress tracking (no fake data)</li>
+<li>Career readiness assessment</li>
+<li>What-If scenario simulator</li>
+<li>Admin knowledge base management</li>
+<li>Full assessment history with improvement tracking</li>
+<li>Learning activity calendar</li>
+</ul>
+<hr />
+<h2 id="architecture">🏗️ Architecture</h2>
+<pre><code>                    ┌─────────────────┐
+                    │     Student     │
+                    └────────┬────────┘
+                             ↓
+                    ┌─────────────────┐
+                    │ React Frontend  │  (Vite + Tailwind + Recharts)
+                    └────────┬────────┘
+                             ↓
+                    ┌─────────────────┐
+                    │   Flask API     │  (JWT + SQLAlchemy)
+                    └────────┬────────┘
+                             │
+            ┌────────────────┼─────────────────┐
+            ↓                ↓                 ↓
+     PostgreSQL           ML Engine        RAG Engine
+      (NeonDB)                                 │
+            │         ┌──────┼──────┐          │
+            │         ↓      ↓      ↓          │
+            │       RF    KMeans   TF-IDF      │
+            │                            ┌─────┴─────┐
+            │                            ↓           ↓
+            │                       Embeddings   ChromaDB
+            │                            ↓           ↓
+            │                         Retrieval ←───┘
+            │                            ↓
+            │                      Gemini LLM
+            │                            ↓
+            └──────────────┬─────────────┘
+                           ↓
+                 Personalized Experience
+</code></pre>
+<hr />
+<h2 id="technology-stack">🛠️ Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>React 18, Vite, Tailwind CSS, React Router v6, Recharts, Lucide React</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>Python, Flask 3.0, Flask-CORS, Flask-JWT-Extended</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>PostgreSQL (NeonDB cloud) / SQLAlchemy ORM</td>
+</tr>
+<tr>
+<td><strong>ML</strong></td>
+<td>scikit-learn, Pandas, NumPy, joblib</td>
+</tr>
+<tr>
+<td><strong>RAG</strong></td>
+<td>ChromaDB, Google Gemini (embeddings + LLM), sentence-transformers (fallback)</td>
+</tr>
+<tr>
+<td><strong>Auth</strong></td>
+<td>JWT, bcrypt password hashing</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>Vercel (frontend), Render (backend), NeonDB (database)</td>
+</tr>
+<tr>
+<td><strong>Version Control</strong></td>
+<td>Git + GitHub</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ml-algorithms">🤖 ML Algorithms</h2>
+<h3 id="1-random-forest-classifier">1. Random Forest Classifier</h3>
+<p><strong>Purpose:</strong> Predict student performance/skill level category</p>
+<p><strong>Input Features:</strong><br />
+- Subject assessment scores (per skill)<br />
+- Daily study time<br />
+- Number of previous assessment attempts<br />
+- Topic completion rate</p>
+<p><strong>Output:</strong> Skill category (Beginner / Intermediate / Advanced)</p>
+<p><strong>Training:</strong> Trained on synthetic student data (clearly documented as synthetic).<br />
+See <code>ml/random_forest/train_rf.py</code> for training pipeline.</p>
+<p><strong>Evaluation Metrics:</strong> Accuracy, Precision, Recall, F1-Score (on held-out test set)</p>
+<blockquote>
+<p>⚠️ <strong>Note:</strong> Training data is synthetic. Real-world performance depends on actual user data.</p>
+</blockquote>
+<hr />
+<h3 id="2-k-means-clustering">2. K-Means Clustering</h3>
+<p><strong>Purpose:</strong> Identify student learning profiles</p>
+<p><strong>Input Features:</strong><br />
+- Average skill scores<br />
+- Study time per day<br />
+- Topic completion rate<br />
+- Assessment performance</p>
+<p><strong>Output:</strong> Learning Profile (Foundation Learner / Skill Builder / Advanced Learner)</p>
+<p><strong>Cluster Interpretation:</strong> Cluster labels are assigned by analyzing centroid values — not assumed from cluster IDs. The cluster with highest average scores is labeled "Advanced Learner", etc.</p>
+<p><strong>Evaluation:</strong> Silhouette Score, Inertia, Elbow Analysis</p>
+<p>See <code>ml/kmeans/train_kmeans.py</code> for training pipeline.</p>
+<hr />
+<h3 id="3-tf-idf-cosine-similarity-recommendation-engine">3. TF-IDF + Cosine Similarity (Recommendation Engine)</h3>
+<p><strong>Purpose:</strong> Match student needs to relevant courses and topics</p>
+<p><strong>Process:</strong><br />
+1. Build TF-IDF matrix from course titles, descriptions, and skill tags<br />
+2. Construct a query string from: career goal + skill gaps + current skills + interests<br />
+3. Transform query with fitted TF-IDF vectorizer<br />
+4. Compute cosine similarity between query and all courses<br />
+5. Combine similarity score with: skill gap importance, career relevance, prerequisite status<br />
+6. Return ranked recommendations with explanations</p>
+<p><strong>Output:</strong> Ranked list of courses/topics with recommendation score and reason</p>
+<p>See <code>ml/recommendation/</code> for implementation.</p>
+<hr />
+<h3 id="4-skill-gap-analysis-engine">4. Skill Gap Analysis Engine</h3>
+<p><strong>Purpose:</strong> Compare career requirements to student's current skill levels</p>
+<p><strong>Process:</strong><br />
+- For each skill required by the target career: <code>gap = required_score - current_score</code><br />
+- Priority: Critical gaps (large gap + high importance) are flagged first<br />
+- Results feed into recommendations and learning path generation</p>
+<hr />
+<h3 id="5-adaptive-learning-engine">5. Adaptive Learning Engine</h3>
+<p><strong>Purpose:</strong> Modify the learning path based on assessment performance</p>
+<p><strong>Rules:</strong><br />
+- Score &lt; 50%: Add prerequisite/reinforcement topics to the path<br />
+- Score 50–75%: Continue with current path, add practice resources<br />
+- Score &gt; 75%: Unlock next topic, consider advanced content if prerequisites met</p>
+<p><strong>Rules are configurable</strong> in <code>ml/adaptive_engine.py</code></p>
+<hr />
+<h2 id="rag-architecture">📚 RAG Architecture</h2>
+<h3 id="pipeline">Pipeline</h3>
+<pre><code>Documents (PDF/TXT/MD/HTML)
+    ↓
+Document Loader (PyMuPDF, BeautifulSoup)
+    ↓
+Text Cleaning
+    ↓
+Text Chunking (512 tokens, 50 token overlap)
+    ↓
+Embeddings (Gemini / sentence-transformers)
+    ↓
+ChromaDB (persistent vector store)
+    ↓
+Similarity Search (cosine similarity, score threshold 0.3)
+    ↓
+Top-K Chunks + Metadata Filtering
+    ↓
+Prompt Construction (system prompt + context + history + query)
+    ↓
+LLM (Gemini 1.5 Flash)
+    ↓
+Grounded Answer + Source References
+</code></pre>
+<h3 id="hallucination-control">Hallucination Control</h3>
+<ul>
+<li>Minimum relevance score threshold (0.3): if no chunks meet threshold → fallback message</li>
+<li>System prompt instructs LLM not to fabricate platform-specific facts</li>
+<li>Source references displayed for transparency</li>
+<li>Clearly distinguished: knowledge-base answers vs general explanations</li>
+</ul>
+<h3 id="modularity">Modularity</h3>
+<ul>
+<li><code>EmbeddingProvider</code> abstract interface → swap providers via <code>EMBEDDING_PROVIDER</code> env var</li>
+<li><code>VectorStore</code> abstract interface → swap from ChromaDB to FAISS without app changes</li>
+<li><code>LLMProvider</code> abstract interface → swap from Gemini to OpenAI via <code>LLM_PROVIDER</code> env var</li>
+</ul>
+<hr />
+<h2 id="database">🗄️ Database</h2>
+<p>PostgreSQL with 30+ tables. Key tables:</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>users</code></td>
+<td>User accounts and profile</td>
+</tr>
+<tr>
+<td><code>careers</code></td>
+<td>Career goals (Data Scientist, Web Developer, etc.)</td>
+</tr>
+<tr>
+<td><code>skills</code></td>
+<td>Individual skills with categories</td>
+</tr>
+<tr>
+<td><code>career_skills</code></td>
+<td>Required skill levels per career</td>
+</tr>
+<tr>
+<td><code>user_skills</code></td>
+<td>Student's current skill proficiency</td>
+</tr>
+<tr>
+<td><code>courses</code>, <code>topics</code>, <code>lessons</code></td>
+<td>Learning content hierarchy</td>
+</tr>
+<tr>
+<td><code>assessments</code>, <code>questions</code></td>
+<td>Quiz definitions</td>
+</tr>
+<tr>
+<td><code>assessment_attempts</code>, <code>assessment_answers</code></td>
+<td>Student quiz history</td>
+</tr>
+<tr>
+<td><code>learning_paths</code>, <code>learning_path_items</code></td>
+<td>Personalized roadmaps</td>
+</tr>
+<tr>
+<td><code>skill_gap_records</code></td>
+<td>Calculated skill gaps</td>
+</tr>
+<tr>
+<td><code>recommendations</code></td>
+<td>AI recommendations history</td>
+</tr>
+<tr>
+<td><code>model_predictions</code></td>
+<td>RF prediction log</td>
+</tr>
+<tr>
+<td><code>cluster_assignments</code></td>
+<td>K-Means cluster log</td>
+</tr>
+<tr>
+<td><code>rag_documents</code>, <code>rag_chunks</code></td>
+<td>RAG knowledge base metadata</td>
+</tr>
+<tr>
+<td><code>rag_conversations</code>, <code>rag_messages</code></td>
+<td>AI chat history</td>
+</tr>
+<tr>
+<td><code>learning_activity</code></td>
+<td>Usage tracking</td>
+</tr>
+<tr>
+<td><code>notifications</code></td>
+<td>User notifications</td>
+</tr>
+</tbody>
+</table>
+<p>Full schema: <code>database/schema.sql</code></p>
+<hr />
+<h2 id="api-reference">📡 API Reference</h2>
+<h3 id="authentication">Authentication</h3>
+<pre><code>POST /api/auth/register    Register new user
+POST /api/auth/login       Login, receive JWT
+GET  /api/auth/me          Get current user
+</code></pre>
+<h3 id="dashboard-profile">Dashboard &amp; Profile</h3>
+<pre><code>GET /api/dashboard         Full dashboard data
+GET /api/profile           User profile
+PUT /api/profile           Update profile
+</code></pre>
+<h3 id="assessments">Assessments</h3>
+<pre><code>GET  /api/assessment/diagnostic         Get diagnostic quiz for career
+POST /api/assessment/diagnostic/start   Start attempt
+POST /api/assessment/diagnostic/submit  Submit answers → triggers ML pipeline
+GET  /api/assessment/history            All past attempts
+GET  /api/assessment/&lt;id&gt;/questions     Quiz questions
+POST /api/assessment/&lt;id&gt;/submit        Submit topic quiz
+</code></pre>
+<h3 id="learning-path">Learning Path</h3>
+<pre><code>GET  /api/learning-path         Get active path
+POST /api/learning-path/generate    Generate after diagnostic
+POST /api/learning-path/regenerate  Regenerate (archives old)
+</code></pre>
+<h3 id="courses-progress">Courses &amp; Progress</h3>
+<pre><code>GET  /api/courses               Course library (with filters)
+GET  /api/courses/&lt;id&gt;          Course detail
+GET  /api/topics/&lt;id&gt;           Topic detail with lessons
+POST /api/lesson/&lt;id&gt;/complete  Mark lesson complete
+POST /api/topic/&lt;id&gt;/complete   Mark topic complete
+</code></pre>
+<h3 id="ai-features">AI Features</h3>
+<pre><code>GET  /api/recommendations       Personalized recommendations
+GET  /api/ai-insights           All AI insights
+GET  /api/career-readiness      Career readiness data
+POST /api/what-if               What-if scenario simulation
+</code></pre>
+<h3 id="rag-chat">RAG Chat</h3>
+<pre><code>POST /api/rag/chat                    Send message, get answer + sources
+POST /api/rag/conversations           New conversation
+GET  /api/rag/conversations           List conversations
+GET  /api/rag/conversations/&lt;id&gt;      Get conversation + messages
+DELETE /api/rag/conversations/&lt;id&gt;    Delete conversation
+PUT  /api/rag/conversations/&lt;id&gt;/rename  Rename
+</code></pre>
+<h3 id="admin">Admin</h3>
+<pre><code>POST /api/rag/documents/upload    Upload RAG document
+GET  /api/rag/documents           List documents
+DELETE /api/rag/documents/&lt;id&gt;    Delete document
+POST /api/rag/documents/reindex   Reindex all
+
+GET  /api/admin/stats             System statistics
+GET  /api/admin/users             User list
+CRUD /api/admin/careers           Career management
+CRUD /api/admin/courses           Course management
+</code></pre>
+<hr />
+<h2 id="quick-start">🚀 Quick Start</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Python 3.10+</li>
+<li>Node.js 18+</li>
+<li>PostgreSQL (or NeonDB account)</li>
+<li>Git</li>
+</ul>
+<h3 id="1-clone-the-repository">1. Clone the Repository</h3>
+<pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/AI-LearnPath.git
+cd AI-LearnPath
+</code></pre>
+<h3 id="2-database-setup">2. Database Setup</h3>
+<pre><code class="language-bash"># Set your database URL
+export DATABASE_URL=&quot;postgresql://user:pass@host/dbname&quot;
+
+# Initialize database
+python database/init_db.py
+# Answer 'y' to load seed data
+</code></pre>
+<h3 id="3-backend-setup">3. Backend Setup</h3>
+<pre><code class="language-bash">cd backend
+pip install -r requirements.txt
+
+# Copy and configure environment
+cp .env.example .env
+# Edit .env with your values
+
+python app.py
+# Backend runs at http://localhost:5000
+</code></pre>
+<h3 id="4-train-ml-models">4. Train ML Models</h3>
+<pre><code class="language-bash">cd ml
+
+# Generate synthetic training data
+python data/synthetic_data_generator.py
+
+# Train all models
+python train_random_forest.py
+python train_kmeans.py
+python build_recommendation_index.py
+
+# Evaluate models
+python evaluate_models.py
+</code></pre>
+<h3 id="5-ingest-rag-knowledge-base">5. Ingest RAG Knowledge Base</h3>
+<pre><code class="language-bash"># From project root
+python rag/ingest_knowledge_base.py
+</code></pre>
+<h3 id="6-frontend-setup">6. Frontend Setup</h3>
+<pre><code class="language-bash">cd frontend
+npm install
+
+# Copy and configure
+cp .env.example .env.local
+# Set VITE_API_BASE_URL=http://localhost:5000
+
+npm run dev
+# Frontend runs at http://localhost:3000
+</code></pre>
+<hr />
+<h2 id="environment-variables">⚙️ Environment Variables</h2>
+<h3 id="backend-backendenv">Backend (<code>backend/.env</code>)</h3>
+<pre><code>DATABASE_URL=postgresql://user:password@host/dbname
+JWT_SECRET=your-super-secret-jwt-key-min-32-chars
+LLM_PROVIDER=gemini
+LLM_API_KEY=your-gemini-api-key
+GEMINI_MODEL=gemini-1.5-flash
+LLM_MODEL=gemini-1.5-flash
+EMBEDDING_PROVIDER=gemini
+GEMINI_EMBEDDING_MODEL=models/text-embedding-004
+EMBEDDING_MODEL=models/text-embedding-004
+VECTOR_DB_PATH=./rag/chroma_db
+FLASK_ENV=development
+FLASK_DEBUG=True
+</code></pre>
+<h3 id="frontend-frontendenvlocal">Frontend (<code>frontend/.env.local</code>)</h3>
+<pre><code>VITE_API_BASE_URL=http://localhost:5000
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>Never commit <code>.env</code> files to Git.</strong> They are in <code>.gitignore</code>.</p>
+</blockquote>
+<h3 id="getting-api-keys-free-tier">Getting API Keys (Free Tier)</h3>
+<p><strong>Google Gemini (LLM + Embeddings):</strong><br />
+1. Visit <a href="https://ai.google.dev">ai.google.dev</a><br />
+2. Create a project → Get API key<br />
+3. Set <code>LLM_API_KEY</code> and optionally <code>EMBEDDING_API_KEY</code></p>
+<p><strong>Without any API key:</strong><br />
+- Set <code>EMBEDDING_PROVIDER=sentence_transformer</code> (uses local model, no API key needed)<br />
+- Set <code>LLM_PROVIDER=gemini</code> but leave <code>LLM_API_KEY</code> empty → RAG returns informative fallback message</p>
+<hr />
+<h2 id="training-ml-models">🤖 Training ML Models</h2>
+<p>All ML models are pre-trained on <strong>synthetic data</strong> and saved to <code>ml/models/</code>. The backend loads them at startup.</p>
+<pre><code class="language-bash">cd ml
+
+# Step 1: Generate synthetic training data
+python data/synthetic_data_generator.py
+# Creates ml/data/synthetic_students.csv
+# NOTE: This is SYNTHETIC data, not real educational data.
+
+# Step 2: Train Random Forest
+python train_random_forest.py
+# Saves ml/models/random_forest_model.joblib
+# Prints: accuracy, precision, recall, F1
+
+# Step 3: Train K-Means
+python train_kmeans.py
+# Saves ml/models/kmeans_model.joblib
+# Saves ml/models/cluster_labels.json
+# Prints: silhouette score, cluster sizes
+
+# Step 4: Build TF-IDF Index
+python build_recommendation_index.py
+# Saves ml/models/tfidf_vectorizer.joblib
+# Saves ml/models/tfidf_matrix.npy
+# Saves ml/models/course_metadata.json
+
+# Step 5: Evaluate (optional but recommended)
+python evaluate_models.py
+# Prints evaluation report
+# Saves ml/evaluation/evaluation_report.json
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>All metrics are on synthetic data.</strong> Real-world model performance requires real user data.</p>
+</blockquote>
+<hr />
+<h2 id="ingesting-rag-documents">📖 Ingesting RAG Documents</h2>
+<pre><code class="language-bash"># Ingest all sample documents from rag/knowledge_base/sample_documents/
+python rag/ingest_knowledge_base.py
+
+# The admin panel also supports uploading documents via the web UI:
+# Login as admin → AI LearnPath Admin → Knowledge Base → Upload Document
+
+# Supported formats: PDF, TXT, Markdown, HTML
+</code></pre>
+<hr />
+<h2 id="testing-verification">🧪 Testing &amp; Verification</h2>
+<p>The project includes an automated test suite, segregated ML benchmark scripts, and an empirical RAG grounding evaluation suite compliant with the 10 Workspace Rules (<a href="docs/WORKSPACE_RULES.md"><code>docs/WORKSPACE_RULES.md</code></a>).</p>
+<h3 id="1-automated-test-suite-20-tests-across-scoring-ml-rag-and-apis">1. Automated Test Suite (20 Tests across Scoring, ML, RAG, and APIs)</h3>
+<pre><code class="language-bash"># Run all unit and integration tests from the project root:
+python run_tests.py
+</code></pre>
+<ul>
+<li><strong>Test Modules Covered:</strong></li>
+<li><code>tests/test_scoring_engine.py</code>: NTA NEET marking rules (+4 / -1 / 0), 50-question papers, Section B attempt caps, and edge cases.</li>
+<li><code>tests/test_adaptive_path.py</code>: Random Forest student tier inference, KMeans learner clustering, backward compatibility, and DAG prerequisite verification.</li>
+<li><code>tests/test_rag_pipeline.py</code>: Sentence chunking, token cleaning, groundedness scoring, and relevance matching.</li>
+<li><code>tests/test_api_endpoints.py</code>: Flask health check, JWT authentication enforcement, and CORS preflight.</li>
+</ul>
+<h3 id="2-ml-model-benchmark-suite">2. ML Model Benchmark Suite</h3>
+<pre><code class="language-bash"># Evaluates Random Forest and KMeans models (Segregated Synthetic &amp; Real Cohorts):
+python ml/evaluate_models.py
+</code></pre>
+<ul>
+<li>Full benchmark report: <a href="docs/ML_BENCHMARK_RESULTS.md"><code>docs/ML_BENCHMARK_RESULTS.md</code></a></li>
+</ul>
+<h3 id="3-neet-rag-retrieval-grounding-evaluation">3. NEET RAG Retrieval &amp; Grounding Evaluation</h3>
+<pre><code class="language-bash"># Measures Top-K Hit Rate, MRR, Precision@K, and syllabus groundedness across 30 authentic queries:
+python rag/evaluate_rag.py
+</code></pre>
+<ul>
+<li>Full evaluation report: <a href="docs/RAG_EVALUATION_RESULTS.md"><code>docs/RAG_EVALUATION_RESULTS.md</code></a></li>
+</ul>
+<h3 id="manual-end-to-end-test">Manual End-to-End Test</h3>
+<ol>
+<li>Register as <strong>Student A</strong> → Career: Data Scientist → Take diagnostic (answer Python questions correctly, Statistics poorly)</li>
+<li>Register as <strong>Student B</strong> → Career: Data Scientist → Take diagnostic (answer Statistics correctly, Python poorly)</li>
+<li>Compare their learning paths → Paths must differ</li>
+<li>Complete a topic as Student A → Verify progress updates</li>
+<li>Take an assessment with score &lt; 50% → Verify adaptive engine adds reinforcement</li>
+<li>Ask the AI Assistant: "Why do I need Statistics before ML?" → Verify RAG returns grounded answer with sources</li>
+</ol>
+<hr />
+<h2 id="deployment">🌐 Deployment</h2>
+<h3 id="frontend-vercel">Frontend → Vercel</h3>
+<pre><code class="language-bash">cd frontend
+npm run build
+
+# Install Vercel CLI
+npm i -g vercel
+vercel
+
+# Set environment variable in Vercel dashboard:
+# VITE_API_BASE_URL = https://your-backend.onrender.com
+</code></pre>
+<h3 id="backend-render">Backend → Render</h3>
+<ol>
+<li>Create account at <a href="https://render.com">render.com</a></li>
+<li>New → Web Service → Connect GitHub repo</li>
+<li>Root directory: <code>backend/</code></li>
+<li>Build command: <code>pip install -r requirements.txt</code></li>
+<li>Start command: <code>gunicorn 'app:create_app()' --bind 0.0.0.0:$PORT</code></li>
+<li>Add environment variables from <code>backend/.env.example</code></li>
+</ol>
+<h3 id="database-neondb">Database → NeonDB</h3>
+<ol>
+<li>Create account at <a href="https://neon.tech">neon.tech</a></li>
+<li>Create a new project</li>
+<li>Copy connection string (Database URL)</li>
+<li>Set as <code>DATABASE_URL</code> in Render environment</li>
+<li>Run <code>python database/init_db.py</code> to initialize schema</li>
+</ol>
+<h3 id="vector-store-on-render">Vector Store on Render</h3>
+<p>ChromaDB runs in persistent local mode. On Render, use a persistent disk:<br />
+- Mount path: <code>/opt/render/project/src/chroma_db</code><br />
+- Set <code>VECTOR_DB_PATH=/opt/render/project/src/chroma_db</code></p>
+<p>Alternatively, use ChromaDB Cloud or migrate to a cloud-compatible vector DB.</p>
+<hr />
+<h2 id="limitations">⚠️ Limitations</h2>
+<ol>
+<li>
+<p><strong>Synthetic Training Data:</strong> Random Forest and K-Means are trained on synthetic data. Model quality improves significantly with real user data.</p>
+</li>
+<li>
+<p><strong>Recommendation Quality:</strong> TF-IDF recommendations depend on the quality and richness of course metadata. More detailed course descriptions improve recommendation accuracy.</p>
+</li>
+<li>
+<p><strong>K-Means Cluster Interpretation:</strong> Cluster labels are assigned by centroid analysis but may shift if the training data distribution changes. Revalidate clusters when retraining.</p>
+</li>
+<li>
+<p><strong>RAG Quality:</strong> The AI Learning Assistant's answer quality depends on: (a) the quality of indexed knowledge documents, (b) the relevance of retrieved chunks, and (c) the LLM's instruction-following ability.</p>
+</li>
+<li>
+<p><strong>LLM Hallucinations:</strong> Despite RAG safeguards, LLMs can still generate inaccurate information. The system implements score thresholds and system prompt constraints, but human review is recommended for critical learning content.</p>
+</li>
+<li>
+<p><strong>Career Readiness is an Estimate:</strong> Career readiness percentages are estimates based on assessment scores and activity data. They do not guarantee employment outcomes.</p>
+</li>
+<li>
+<p><strong>Small Knowledge Base:</strong> The initial knowledge base contains sample documents. The system improves as more learning content is indexed by admins.</p>
+</li>
+<li>
+<p><strong>Adaptive Engine:</strong> The current adaptive rules are heuristic (threshold-based). A more sophisticated model (e.g., multi-armed bandit or deep RL) would improve adaptation quality.</p>
+</li>
+<li>
+<p><strong>No Real-Time Collaboration:</strong> The platform is designed for individual learning. Multi-user or collaborative features are not implemented.</p>
+</li>
+<li>
+<p><strong>No Mobile App:</strong> The platform is a web application with a responsive design. Native mobile apps are not included.</p>
+</li>
+</ol>
+<hr />
+<h2 id="future-enhancements">🔮 Future Enhancements</h2>
+<ul>
+<li>[ ] Knowledge Graph-based prerequisite reasoning</li>
+<li>[ ] Collaborative filtering (recommend based on similar students)</li>
+<li>[ ] Deep learning-based performance prediction (LSTM for temporal patterns)</li>
+<li>[ ] Voice-based AI learning assistant</li>
+<li>[ ] Multilingual support (Hindi, Tamil, etc.)</li>
+<li>[ ] RAG reranking (cross-encoder reranking for better retrieval)</li>
+<li>[ ] LLM-based tutoring with Socratic method</li>
+<li>[ ] Real industry skill datasets for model training</li>
+<li>[ ] Mobile app (React Native)</li>
+<li>[ ] Peer learning features</li>
+<li>[ ] Gamification (badges, leaderboards)</li>
+<li>[ ] Integration with external course providers</li>
+<li>[ ] Advanced career intelligence (job market data)</li>
+</ul>
+<hr />
+<h2 id="project-structure">📁 Project Structure</h2>
+<pre><code>AI-LearnPath/
+│
+├── frontend/                   # React + Vite + Tailwind frontend
+│   ├── src/
+│   │   ├── components/         # Reusable UI components
+│   │   │   ├── layout/         # Sidebar, Navbar
+│   │   │   ├── common/         # Shared components
+│   │   │   ├── learning/       # Course, topic, path components
+│   │   │   ├── assessment/     # Quiz components
+│   │   │   ├── ai/             # RAG chat components
+│   │   │   └── charts/         # Recharts wrappers
+│   │   ├── pages/              # All page components
+│   │   │   ├── public/         # Landing, Login, Register
+│   │   │   ├── auth/           
+│   │   │   ├── onboarding/     # Onboarding flow
+│   │   │   ├── student/        # Main student pages
+│   │   │   └── admin/          # Admin pages
+│   │   ├── context/            # React context providers
+│   │   ├── hooks/              # Custom hooks (useGreeting, useAuth)
+│   │   ├── services/           # API service layer (Axios)
+│   │   └── utils/              # Helper functions
+│   └── vercel.json             # Vercel deployment config
+│
+├── backend/                    # Flask REST API
+│   ├── app.py                  # Application factory
+│   ├── config/                 # Settings
+│   ├── models/                 # SQLAlchemy models
+│   ├── routes/                 # Flask blueprints
+│   ├── services/               # Business logic
+│   ├── ml/                     # ML model loading bridge
+│   ├── utils/                  # Auth, validators, responses
+│   ├── requirements.txt
+│   ├── Procfile                # Render deployment
+│   └── render.yaml             # Render config
+│
+├── ml/                         # Machine learning pipeline
+│   ├── data/                   # Synthetic training data
+│   ├── preprocessing/          # Feature engineering
+│   ├── random_forest/          # RF training
+│   ├── kmeans/                 # K-Means training
+│   ├── recommendation/         # TF-IDF recommender
+│   ├── skill_gap/              # Skill gap analysis
+│   ├── evaluation/             # Model evaluation
+│   ├── models/                 # Saved model files (.joblib)
+│   └── adaptive_engine.py      # Adaptive learning rules
+│
+├── rag/                        # RAG pipeline
+│   ├── ingestion/              # Document loader
+│   ├── chunking/               # Text chunker
+│   ├── embeddings/             # Embedding providers
+│   ├── vectorstore/            # ChromaDB + interface
+│   ├── retrieval/              # Retriever
+│   ├── prompting/              # Prompt builder
+│   ├── llm/                    # LLM providers
+│   ├── services/               # RAG pipeline + knowledge base
+│   ├── evaluation/             # RAG evaluation
+│   ├── knowledge_base/         # Sample documents
+│   └── ingest_knowledge_base.py
+│
+├── database/
+│   ├── schema.sql              # Full PostgreSQL schema
+│   ├── seed.sql                # Development seed data
+│   └── init_db.py              # DB initialization script
+│
+├── docs/                       # Documentation
+│   ├── architecture.md
+│   ├── database.md
+│   ├── ml_models.md
+│   ├── rag_pipeline.md
+│   ├── api.md
+│   └── deployment.md
+│
+├── tests/                      # Test suite
+├── README.md
+└── .gitignore
+</code></pre>
+<hr />
+<h2 id="author">👨‍💻 Author</h2>
+<p><strong>Mahesh Dudi</strong><br />
+MCA Final Year Project<br />
+<em>AI LearnPath — AI-Based Personalized Learning Path, Skill Gap &amp; AI Learning Assistant</em></p>
+<hr />
+<h2 id="license">📄 License</h2>
+<p>This project is developed as an academic project. All rights reserved.</p>
+<hr />
+<p><em>AI LearnPath — Assess. Analyze. Recommend. Learn. Ask. Reassess. Adapt.</em></p>
+  </div>
+</body>
+</html>

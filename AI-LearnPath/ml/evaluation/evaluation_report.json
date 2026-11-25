@@ -1,0 +1,12 @@
+{
+    "random_forest": {
+        "accuracy": 0.985,
+        "precision_macro": 0.9865184218876418,
+        "recall_macro": 0.9834212224831432,
+        "f1_macro": 0.9849008786536819
+    },
+    "kmeans": {
+        "silhouette_score": 0.28351264513057395,
+        "inertia": 6281.3307236657465
+    }
+}

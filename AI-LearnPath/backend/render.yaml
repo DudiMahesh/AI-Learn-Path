@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: ai-learnpath-backend
+    runtime: python3
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn 'app:create_app()' --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: LLM_API_KEY
+        sync: false
+      - key: EMBEDDING_PROVIDER
+        value: sentence_transformer
+      - key: VECTOR_DB_PATH
+        value: ./chroma_db
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: "False"
+      - key: PYTHON_VERSION
+        value: "3.11.0"

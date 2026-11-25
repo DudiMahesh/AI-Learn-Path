@@ -1,0 +1,22 @@
+NEET UG 2026 Preparation Platform - FAQ
+
+Q: What subjects does this platform cover?
+A: This platform covers all three NEET UG subjects: Physics (Units 1-20), Chemistry (Units 1-20), and Biology (Botany & Zoology). All content follows the official NMC/NTA NEET UG 2026 reduced syllabus.
+
+Q: How is the NEET diagnostic assessment structured?
+A: The diagnostic assessment contains 10 carefully selected questions covering Physics, Chemistry, and Biology fundamentals. Based on your performance, our AI generates a personalized study plan with weak-chapter identification and priority order.
+
+Q: How many courses are available?
+A: There are 10 NEET UG 2026 courses covering 85 units and 131 in-depth lessons: Physics Complete Syllabus, Chemistry Complete Syllabus, Biology Botany & Zoology, and specialized sub-courses for each subject area.
+
+Q: What is NCERT importance in NEET?
+A: NCERT textbooks are the primary source for NEET questions. Approximately 80-85% of NEET questions are directly from NCERT Class 11 and 12 textbooks for all three subjects. Biology has the highest direct NCERT dependency.
+
+Q: How does the AI tutor help with NEET preparation?
+A: The AI tutor uses Retrieval-Augmented Generation (RAG) grounded in NEET syllabus documents, NCERT notes, and Physics/Chemistry/Biology study materials. Ask any topic question and get accurate, cited answers.
+
+Q: What is the NEET exam pattern in 2026?
+A: NEET UG 2026 has 180 questions (720 marks): Physics - 45Q, Chemistry - 45Q, Biology (Botany+Zoology) - 90Q. Marking: +4 for correct, -1 for incorrect, 0 for unattempted. Duration: 3 hours 20 minutes.
+
+Q: Which topics have highest weightage in NEET?
+A: Physics: Mechanics (25%), Electrodynamics (20%), Modern Physics (15%). Chemistry: Organic Chemistry (25%), Physical Chemistry (30%), Inorganic (45%). Biology: Human Physiology and Cell Biology have highest weightage.

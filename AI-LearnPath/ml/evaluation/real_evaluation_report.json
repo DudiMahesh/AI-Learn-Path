@@ -1,0 +1,20 @@
+{
+  "evaluation_type": "REAL_DATA",
+  "dataset_source": "NeonDB PostgreSQL (assessment_attempts table)",
+  "minimum_sample_threshold": 50,
+  "collected_samples": 0,
+  "status": "PENDING",
+  "reason": "Empirical diagnostic test attempts in production are currently below statistical significance threshold (n < 50). Benchmarks will automatically compute once real diagnostic volume accumulates.",
+  "metrics": {
+    "random_forest": {
+      "accuracy": "PENDING",
+      "precision_macro": "PENDING",
+      "recall_macro": "PENDING",
+      "f1_macro": "PENDING"
+    },
+    "kmeans": {
+      "silhouette_score": "PENDING",
+      "davies_bouldin_index": "PENDING"
+    }
+  }
+}

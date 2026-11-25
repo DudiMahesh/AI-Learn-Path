@@ -1,0 +1,57 @@
+{
+  "evaluation_type": "SYNTHETIC_DATA",
+  "dataset_file": "synthetic_neet_students.csv",
+  "total_synthetic_samples": 1200,
+  "data_provenance": "Generated via ml/data/generate_neet_data.py using normal distributions matching NTA NEET score ranges",
+  "random_forest": {
+    "accuracy": 0.9392,
+    "accuracy_percentage": "93.92%",
+    "precision_macro": 0.8485,
+    "recall_macro": 0.9643,
+    "f1_macro": 0.8978,
+    "confusion_matrix": {
+      "labels": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ],
+      "matrix": [
+        [
+          154,
+          2,
+          0
+        ],
+        [
+          40,
+          883,
+          29
+        ],
+        [
+          0,
+          2,
+          90
+        ]
+      ]
+    },
+    "feature_names": [
+      "physics_score",
+      "chemistry_score",
+      "biology_score",
+      "daily_study_hours",
+      "time_per_question_sec",
+      "accuracy_rate",
+      "previous_mock_attempts"
+    ]
+  },
+  "kmeans": {
+    "n_clusters": 3,
+    "silhouette_score": 0.1761,
+    "davies_bouldin_index": 1.7553,
+    "inertia": 3986.02,
+    "cluster_distribution": {
+      "Cluster_0": 373,
+      "Cluster_1": 343,
+      "Cluster_2": 484
+    }
+  }
+}

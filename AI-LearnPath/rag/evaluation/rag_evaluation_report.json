@@ -1,0 +1,1160 @@
+{
+  "retrieval_performance": {
+    "total_queries_evaluated": 30,
+    "hit_rates": {
+      "top_1_hit_rate": 0.8,
+      "top_3_hit_rate": 0.9333,
+      "top_5_hit_rate": 0.9667
+    },
+    "mean_reciprocal_rank_mrr": 0.8694,
+    "mean_precision_at_k": {
+      "precision_at_1": 0.8,
+      "precision_at_3": 0.5889,
+      "precision_at_5": 0.5
+    },
+    "average_top1_similarity": 0.4039,
+    "subject_breakdown": {
+      "Physics": {
+        "count": 10,
+        "top_1_hit_rate": 0.7,
+        "top_3_hit_rate": 0.9,
+        "top_5_hit_rate": 0.9,
+        "mrr": 0.8
+      },
+      "Chemistry": {
+        "count": 10,
+        "top_1_hit_rate": 0.7,
+        "top_3_hit_rate": 0.9,
+        "top_5_hit_rate": 1.0,
+        "mrr": 0.8083
+      },
+      "Biology": {
+        "count": 10,
+        "top_1_hit_rate": 1.0,
+        "top_3_hit_rate": 1.0,
+        "top_5_hit_rate": 1.0,
+        "mrr": 1.0
+      }
+    },
+    "per_query_details": [
+      {
+        "id": "NEET-PHY-01",
+        "subject": "Physics",
+        "query": "What is the formula for least count of a Vernier calliper and screw gauge in physics measurements?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.6726,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.6726,
+            "snippet": "# NEET (UG) 2026 \u2013 Physics Complete Study Material  Complete Syllabus: Units 1\u201320. Based on the official NMC/NTA curriculum. Includes concep"
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2049,
+            "snippet": "### 3.2 Covalent bonding, VSEPR & Hybridisation - Electronegativity: F (4.0) > O (3.5) > N (3.0) \u2248 Cl (3.0) > Br (2.8) > C (2.5) > H (2.1). "
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.1814,
+            "snippet": "- Gay-Lussac's law of gaseous volumes: Gases react in simple whole-number volume ratios at the same T and P. - Avogadro's law: Equal volumes"
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-02",
+        "subject": "Physics",
+        "query": "Derive the horizontal range and maximum height formula in projectile motion.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.6808,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.6808,
+            "snippet": "- Instantaneous velocity v = dx/dt; acceleration a = dv/dt = d\u00b2x/dt\u00b2. - Equations of uniformly accelerated motion:  1. v = u + at  2. s = ut"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2917,
+            "snippet": "---  ## Unit 10: Oscillations and Waves - SHM: a = -\u03c9\u00b2 x. Displacement x = A sin(\u03c9t + \u03c6). Velocity v = \u03c9 \u221a(A\u00b2 - x\u00b2). - Energy: K = \u00bd m \u03c9\u00b2 (A"
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2802,
+            "snippet": "Variable force W = \u222b F dx (area under F-x curve). - Kinetic energy K = \u00bd m v\u00b2 = p\u00b2 / 2m. - Work-energy theorem: W_net = \u0394K = \u00bd m v_f\u00b2 - \u00bd m "
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-03",
+        "subject": "Physics",
+        "query": "Explain Newton's second law of motion and impulse momentum theorem.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.2857,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2857,
+            "snippet": "- Instantaneous velocity v = dx/dt; acceleration a = dv/dt = d\u00b2x/dt\u00b2. - Equations of uniformly accelerated motion:  1. v = u + at  2. s = ut"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2377,
+            "snippet": "Variable force W = \u222b F dx (area under F-x curve). - Kinetic energy K = \u00bd m v\u00b2 = p\u00b2 / 2m. - Work-energy theorem: W_net = \u0394K = \u00bd m v_f\u00b2 - \u00bd m "
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.1827,
+            "snippet": "- Escape velocity: v_e = \u221a(2 G M / R) = \u221a(2 g R) \u2248 11.2 km/s. - Satellite orbital speed: v_o = \u221a(G M / r) \u2248 \u221a(g R) \u2248 7.9 km/s. Relation: v_e"
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-04",
+        "subject": "Physics",
+        "query": "What is the work-energy theorem and conservative force condition?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.4461,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.4461,
+            "snippet": "Variable force W = \u222b F dx (area under F-x curve). - Kinetic energy K = \u00bd m v\u00b2 = p\u00b2 / 2m. - Work-energy theorem: W_net = \u0394K = \u00bd m v_f\u00b2 - \u00bd m "
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2039,
+            "snippet": "---  ## Unit 10: Oscillations and Waves - SHM: a = -\u03c9\u00b2 x. Displacement x = A sin(\u03c9t + \u03c6). Velocity v = \u03c9 \u221a(A\u00b2 - x\u00b2). - Energy: K = \u00bd m \u03c9\u00b2 (A"
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.197,
+            "snippet": "- Escape velocity: v_e = \u221a(2 G M / R) = \u221a(2 g R) \u2248 11.2 km/s. - Satellite orbital speed: v_o = \u221a(G M / r) \u2248 \u221a(g R) \u2248 7.9 km/s. Relation: v_e"
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-05",
+        "subject": "Physics",
+        "query": "What is escape velocity from Earth's surface and orbital velocity formula?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.4596,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.4596,
+            "snippet": "- Escape velocity: v_e = \u221a(2 G M / R) = \u221a(2 g R) \u2248 11.2 km/s. - Satellite orbital speed: v_o = \u221a(G M / r) \u2248 \u221a(g R) \u2248 7.9 km/s. Relation: v_e"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2789,
+            "snippet": "- Instantaneous velocity v = dx/dt; acceleration a = dv/dt = d\u00b2x/dt\u00b2. - Equations of uniformly accelerated motion:  1. v = u + at  2. s = ut"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2122,
+            "snippet": "- Gay-Lussac's law of gaseous volumes: Gases react in simple whole-number volume ratios at the same T and P. - Avogadro's law: Equal volumes"
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-06",
+        "subject": "Physics",
+        "query": "State the first and second laws of thermodynamics and Carnot engine efficiency.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5,
+        "top1_score": 0.2019,
+        "hits": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2019,
+            "snippet": "- Regeneration: G3P \u2192 RuBP. - Net: 3CO2 \u2192 1 triose phosphate. C4 Plants: - Kranz anatomy (bundle sheath + mesophyll cells). - Initial CO2 fi"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.1941,
+            "snippet": "- Escape velocity: v_e = \u221a(2 G M / R) = \u221a(2 g R) \u2248 11.2 km/s. - Satellite orbital speed: v_o = \u221a(G M / r) \u2248 \u221a(g R) \u2248 7.9 km/s. Relation: v_e"
+          },
+          {
+            "rank": 3,
+            "subject": "unknown",
+            "topic": "Learning Path Guide",
+            "score": 0.1839,
+            "snippet": "NEET UG 2026 Learning Path Guide:  When beginning NEET preparation on NEET LearnPath, follow this structured subject-wise study path aligned"
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-07",
+        "subject": "Physics",
+        "query": "Explain simple harmonic motion time period for spring pendulum and simple pendulum.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.5049,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.5049,
+            "snippet": "---  ## Unit 10: Oscillations and Waves - SHM: a = -\u03c9\u00b2 x. Displacement x = A sin(\u03c9t + \u03c6). Velocity v = \u03c9 \u221a(A\u00b2 - x\u00b2). - Energy: K = \u00bd m \u03c9\u00b2 (A"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.3288,
+            "snippet": "- Instantaneous velocity v = dx/dt; acceleration a = dv/dt = d\u00b2x/dt\u00b2. - Equations of uniformly accelerated motion:  1. v = u + at  2. s = ut"
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.312,
+            "snippet": "Variable force W = \u222b F dx (area under F-x curve). - Kinetic energy K = \u00bd m v\u00b2 = p\u00b2 / 2m. - Work-energy theorem: W_net = \u0394K = \u00bd m v_f\u00b2 - \u00bd m "
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-08",
+        "subject": "Physics",
+        "query": "State Coulomb's law and electric field due to a point charge and dipole.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.1948,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.1948,
+            "snippet": "---  ## Unit 10: Oscillations and Waves - SHM: a = -\u03c9\u00b2 x. Displacement x = A sin(\u03c9t + \u03c6). Velocity v = \u03c9 \u221a(A\u00b2 - x\u00b2). - Energy: K = \u00bd m \u03c9\u00b2 (A"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.1434,
+            "snippet": "- For electron: \u03bb = 12.27 / \u221aV \u00c5. ---  ## Unit 18: Atoms and Nuclei - Rutherford scattering: Nucleus is dense positive core. Distance of clo"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.1384,
+            "snippet": "### 3.2 Covalent bonding, VSEPR & Hybridisation - Electronegativity: F (4.0) > O (3.5) > N (3.0) \u2248 Cl (3.0) > Br (2.8) > C (2.5) > H (2.1). "
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-09",
+        "subject": "Physics",
+        "query": "What is Snell's law of refraction and critical angle for total internal reflection?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": null,
+        "reciprocal_rank": 0.0,
+        "top1_score": 0.24,
+        "hits": {
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "hit_at_5": false
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.24,
+            "snippet": "# NEET (UG) 2026 \u2013 Physics Complete Study Material  Complete Syllabus: Units 1\u201320. Based on the official NMC/NTA curriculum. Includes concep"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.1284,
+            "snippet": "- Instantaneous velocity v = dx/dt; acceleration a = dv/dt = d\u00b2x/dt\u00b2. - Equations of uniformly accelerated motion:  1. v = u + at  2. s = ut"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.0964,
+            "snippet": "- Gay-Lussac's law of gaseous volumes: Gases react in simple whole-number volume ratios at the same T and P. - Avogadro's law: Equal volumes"
+          }
+        ]
+      },
+      {
+        "id": "NEET-PHY-10",
+        "subject": "Physics",
+        "query": "Explain Einstein photoelectric equation and de Broglie wavelength formula.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5,
+        "top1_score": 0.3878,
+        "hits": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3878,
+            "snippet": "- Velocity: v_n = 2.18 \u00d7 10\u2076 \u00d7 (Z / n) m/s. - Energy: E_n = -13.6 \u00d7 (Z\u00b2 / n\u00b2) eV = -2.18 \u00d7 10\u207b\u00b9\u2078 \u00d7 (Z\u00b2 / n\u00b2) J. - Rydberg equation: 1/\u03bb = R_"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2262,
+            "snippet": "- For electron: \u03bb = 12.27 / \u221aV \u00c5. ---  ## Unit 18: Atoms and Nuclei - Rutherford scattering: Nucleus is dense positive core. Distance of clo"
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.223,
+            "snippet": "# NEET (UG) 2026 \u2013 Physics Complete Study Material  Complete Syllabus: Units 1\u201320. Based on the official NMC/NTA curriculum. Includes concep"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-01",
+        "subject": "Chemistry",
+        "query": "What are quantum numbers and Pauli exclusion principle in atomic structure?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 2,
+        "reciprocal_rank": 0.5,
+        "top1_score": 0.3222,
+        "hits": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3222,
+            "snippet": "# NEET UG 2026 \u2013 Chemistry Complete Study Material  Textbook-style notes following the official NMC/NTA syllabus (22-12-2025). Units 1\u201320: P"
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2692,
+            "snippet": "- Velocity: v_n = 2.18 \u00d7 10\u2076 \u00d7 (Z / n) m/s. - Energy: E_n = -13.6 \u00d7 (Z\u00b2 / n\u00b2) eV = -2.18 \u00d7 10\u207b\u00b9\u2078 \u00d7 (Z\u00b2 / n\u00b2) J. - Rydberg equation: 1/\u03bb = R_"
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2624,
+            "snippet": "- For electron: \u03bb = 12.27 / \u221aV \u00c5. ---  ## Unit 18: Atoms and Nuclei - Rutherford scattering: Nucleus is dense positive core. Distance of clo"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-02",
+        "subject": "Chemistry",
+        "query": "Explain periodic trends in ionization enthalpy and electronegativity across periods and groups.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.3043,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3043,
+            "snippet": "- Colligative properties:  - Relative lowering of vapour pressure: (p\u00b0 - p)/p\u00b0 = i \u03c7\u2082. - Elevation of boiling point: \u0394Tb = i Kb m. - Depress"
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2867,
+            "snippet": "- Velocity: v_n = 2.18 \u00d7 10\u2076 \u00d7 (Z / n) m/s. - Energy: E_n = -13.6 \u00d7 (Z\u00b2 / n\u00b2) eV = -2.18 \u00d7 10\u207b\u00b9\u2078 \u00d7 (Z\u00b2 / n\u00b2) J. - Rydberg equation: 1/\u03bb = R_"
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2833,
+            "snippet": "- For electron: \u03bb = 12.27 / \u221aV \u00c5. ---  ## Unit 18: Atoms and Nuclei - Rutherford scattering: Nucleus is dense positive core. Distance of clo"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-03",
+        "subject": "Chemistry",
+        "query": "What is VSEPR theory and hybridization in chemical bonding for methane and water?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.5013,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.5013,
+            "snippet": "### 3.2 Covalent bonding, VSEPR & Hybridisation - Electronegativity: F (4.0) > O (3.5) > N (3.0) \u2248 Cl (3.0) > Br (2.8) > C (2.5) > H (2.1). "
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3756,
+            "snippet": "- Quantitative estimation: Dumas (%N from N2 volume at STP), Kjeldahl (%N from ammonia titration), Carius (%Cl, %Br, %S). ---  ## Unit 14: S"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3225,
+            "snippet": "# NEET UG 2026 \u2013 Chemistry Complete Study Material  Textbook-style notes following the official NMC/NTA syllabus (22-12-2025). Units 1\u201320: P"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-04",
+        "subject": "Chemistry",
+        "query": "State Hess's law of constant heat summation and Gibbs free energy equation.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 3,
+        "reciprocal_rank": 0.3333,
+        "top1_score": 0.2502,
+        "hits": {
+          "hit_at_1": false,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2502,
+            "snippet": "- Escape velocity: v_e = \u221a(2 G M / R) = \u221a(2 g R) \u2248 11.2 km/s. - Satellite orbital speed: v_o = \u221a(G M / r) \u2248 \u221a(g R) \u2248 7.9 km/s. Relation: v_e"
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2355,
+            "snippet": "- Gay-Lussac's law of gaseous volumes: Gases react in simple whole-number volume ratios at the same T and P. - Avogadro's law: Equal volumes"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.1981,
+            "snippet": "- Colligative properties:  - Relative lowering of vapour pressure: (p\u00b0 - p)/p\u00b0 = i \u03c7\u2082. - Elevation of boiling point: \u0394Tb = i Kb m. - Depress"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-05",
+        "subject": "Chemistry",
+        "query": "Explain Le Chatelier's principle and equilibrium constant Kc and Kp expression.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.5526,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.5526,
+            "snippet": "- Colligative properties:  - Relative lowering of vapour pressure: (p\u00b0 - p)/p\u00b0 = i \u03c7\u2082. - Elevation of boiling point: \u0394Tb = i Kb m. - Depress"
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2981,
+            "snippet": "- Gay-Lussac's law of gaseous volumes: Gases react in simple whole-number volume ratios at the same T and P. - Avogadro's law: Equal volumes"
+          },
+          {
+            "rank": 3,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.229,
+            "snippet": "---  ## Unit 10: Oscillations and Waves - SHM: a = -\u03c9\u00b2 x. Displacement x = A sin(\u03c9t + \u03c6). Velocity v = \u03c9 \u221a(A\u00b2 - x\u00b2). - Energy: K = \u00bd m \u03c9\u00b2 (A"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-06",
+        "subject": "Chemistry",
+        "query": "What is Raoult's law for ideal solutions and colligative properties?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.4311,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.4311,
+            "snippet": "- Colligative properties:  - Relative lowering of vapour pressure: (p\u00b0 - p)/p\u00b0 = i \u03c7\u2082. - Elevation of boiling point: \u0394Tb = i Kb m. - Depress"
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2487,
+            "snippet": "- Gay-Lussac's law of gaseous volumes: Gases react in simple whole-number volume ratios at the same T and P. - Avogadro's law: Equal volumes"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2486,
+            "snippet": "# NEET UG 2026 \u2013 Chemistry Complete Study Material  Textbook-style notes following the official NMC/NTA syllabus (22-12-2025). Units 1\u201320: P"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-07",
+        "subject": "Chemistry",
+        "query": "State Nernst equation for electrode potential and Faraday's laws of electrolysis.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.3076,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.3076,
+            "snippet": "- Moving coil galvanometer: \u03c4 = N I A B = k \u03b8. Shunt S = I_g G / (I - I_g). Series R = V / I_g - G. - Magnetic materials: Diamagnetic (\u03c7 < 0"
+          },
+          {
+            "rank": 2,
+            "subject": "Physics",
+            "topic": "Physics",
+            "score": 0.2363,
+            "snippet": "---  ## Unit 10: Oscillations and Waves - SHM: a = -\u03c9\u00b2 x. Displacement x = A sin(\u03c9t + \u03c6). Velocity v = \u03c9 \u221a(A\u00b2 - x\u00b2). - Energy: K = \u00bd m \u03c9\u00b2 (A"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2152,
+            "snippet": "- Colligative properties:  - Relative lowering of vapour pressure: (p\u00b0 - p)/p\u00b0 = i \u03c7\u2082. - Elevation of boiling point: \u0394Tb = i Kb m. - Depress"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-08",
+        "subject": "Chemistry",
+        "query": "Explain SN1 and SN2 reaction mechanisms in haloalkanes.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.343,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.343,
+            "snippet": "- Quantitative estimation: Dumas (%N from N2 volume at STP), Kjeldahl (%N from ammonia titration), Carius (%Cl, %Br, %S). ---  ## Unit 14: S"
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3015,
+            "snippet": "- Aldehydes & Ketones: Nucleophilic addition. Aldol condensation (needs \u03b1-H); Cannizzaro reaction (no \u03b1-H, disproportionation); Iodoform tes"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.288,
+            "snippet": "---  ## Unit 10: p-Block Elements (Groups 13\u201318) - Group 13: Inert pair effect (Tl+ stable). Boric acid H3BO3 is monobasic Lewis acid. Dibor"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-09",
+        "subject": "Chemistry",
+        "query": "What is crystal field theory and ligand field splitting in coordination compounds?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.3453,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3453,
+            "snippet": "### 3.2 Covalent bonding, VSEPR & Hybridisation - Electronegativity: F (4.0) > O (3.5) > N (3.0) \u2248 Cl (3.0) > Br (2.8) > C (2.5) > H (2.1). "
+          },
+          {
+            "rank": 2,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.3252,
+            "snippet": "---  ## Unit 10: p-Block Elements (Groups 13\u201318) - Group 13: Inert pair effect (Tl+ stable). Boric acid H3BO3 is monobasic Lewis acid. Dibor"
+          },
+          {
+            "rank": 3,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.249,
+            "snippet": "- Quantitative estimation: Dumas (%N from N2 volume at STP), Kjeldahl (%N from ammonia titration), Carius (%Cl, %Br, %S). ---  ## Unit 14: S"
+          }
+        ]
+      },
+      {
+        "id": "NEET-CHEM-10",
+        "subject": "Chemistry",
+        "query": "What are peptide bonds and primary, secondary, tertiary structures of proteins in biomolecules?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 4,
+        "reciprocal_rank": 0.25,
+        "top1_score": 0.2862,
+        "hits": {
+          "hit_at_1": false,
+          "hit_at_3": false,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Chemistry",
+            "topic": "Chemistry",
+            "score": 0.2862,
+            "snippet": "### 3.2 Covalent bonding, VSEPR & Hybridisation - Electronegativity: F (4.0) > O (3.5) > N (3.0) \u2248 Cl (3.0) > Br (2.8) > C (2.5) > H (2.1). "
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2768,
+            "snippet": "Gel Electrophoresis: - DNA is negatively charged \u2192 migrates from cathode (\u2212) to anode (+). - Smaller fragments migrate faster (farther from "
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2735,
+            "snippet": "# NEET UG 2026 \u2013 Biology Complete Study Material # Botany & Zoology \u2014 Official NMC/NTA Syllabus  Textbook-style notes following the official"
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-01",
+        "subject": "Biology",
+        "query": "What are the structural differences between prokaryotic and eukaryotic cells?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.4216,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.4216,
+            "snippet": "- Typhlosole: fold in intestine for increased absorption. ### 2.3 Cockroach (Periplaneta americana) - Open circulatory system: blood (haemol"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.3965,
+            "snippet": "# NEET UG 2026 \u2013 Biology Complete Study Material # Botany & Zoology \u2014 Official NMC/NTA Syllabus  Textbook-style notes following the official"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2742,
+            "snippet": "Gel Electrophoresis: - DNA is negatively charged \u2192 migrates from cathode (\u2212) to anode (+). - Smaller fragments migrate faster (farther from "
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-02",
+        "subject": "Biology",
+        "query": "Explain stages of mitosis and meiosis prophase I crossing over.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.5454,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.5454,
+            "snippet": "### 3.4 Cell Division  Mitosis (M-phase): - PMAT: Prophase, Metaphase, Anaphase, Telophase. - Produces 2 identical diploid cells. - Signific"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.4009,
+            "snippet": "Double fertilization (unique to angiosperms): - One male gamete + egg cell \u2192 zygote (2n). - Other male gamete + 2 polar nuclei \u2192 primary end"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2769,
+            "snippet": "Transcription: - Template strand \u2192 mRNA. - RNA polymerase; no primer needed; 5'\u21923'. - Start codon: AUG (methionine); Stop codons: UAA, UAG, "
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-03",
+        "subject": "Biology",
+        "query": "Explain the light reaction and Calvin cycle in C3 versus C4 photosynthesis.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.5609,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.5609,
+            "snippet": "- Regeneration: G3P \u2192 RuBP. - Net: 3CO2 \u2192 1 triose phosphate. C4 Plants: - Kranz anatomy (bundle sheath + mesophyll cells). - Initial CO2 fi"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.3225,
+            "snippet": "- Total ATP from complete oxidation of glucose = 36\u201338 ATP. - Terminal electron acceptor: O2 \u2192 H2O. Fermentation (anaerobic): - Yeast: Pyruv"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2557,
+            "snippet": "### 3.4 Cell Division  Mitosis (M-phase): - PMAT: Prophase, Metaphase, Anaphase, Telophase. - Produces 2 identical diploid cells. - Signific"
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-04",
+        "subject": "Biology",
+        "query": "Explain glycolysis steps, Krebs cycle, and electron transport chain ATP yield in cellular respiration.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.6527,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.6527,
+            "snippet": "- Regeneration: G3P \u2192 RuBP. - Net: 3CO2 \u2192 1 triose phosphate. C4 Plants: - Kranz anatomy (bundle sheath + mesophyll cells). - Initial CO2 fi"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.4447,
+            "snippet": "- Residual Volume (RV): ~1100 mL. - Vital Capacity (VC) = TV + IRV + ERV = 4000 mL. - Total Lung Capacity = VC + RV = 5100 mL. Gas Transport"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.4063,
+            "snippet": "- Total ATP from complete oxidation of glucose = 36\u201338 ATP. - Terminal electron acceptor: O2 \u2192 H2O. Fermentation (anaerobic): - Yeast: Pyruv"
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-05",
+        "subject": "Biology",
+        "query": "Describe human heart double circulation and cardiac cycle systole and diastole.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.492,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.492,
+            "snippet": "- Lungs \u2192 Pulmonary vein (oxygenated) \u2192 Left Atrium \u2192 Left Ventricle \u2192 Aorta \u2192 Body. - SA node: pacemaker (60\u201380 bpm); generates cardiac imp"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2635,
+            "snippet": "- Residual Volume (RV): ~1100 mL. - Vital Capacity (VC) = TV + IRV + ERV = 4000 mL. - Total Lung Capacity = VC + RV = 5100 mL. Gas Transport"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2574,
+            "snippet": "Double fertilization (unique to angiosperms): - One male gamete + egg cell \u2192 zygote (2n). - Other male gamete + 2 polar nuclei \u2192 primary end"
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-06",
+        "subject": "Biology",
+        "query": "Explain Mendel's laws of inheritance and dihybrid cross 9:3:3:1 phenotypic ratio.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.3345,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.3345,
+            "snippet": "Transcription: - Template strand \u2192 mRNA. - RNA polymerase; no primer needed; 5'\u21923'. - Start codon: AUG (methionine); Stop codons: UAA, UAG, "
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2674,
+            "snippet": "### 3.4 Cell Division  Mitosis (M-phase): - PMAT: Prophase, Metaphase, Anaphase, Telophase. - Produces 2 identical diploid cells. - Signific"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2559,
+            "snippet": "Double fertilization (unique to angiosperms): - One male gamete + egg cell \u2192 zygote (2n). - Other male gamete + 2 polar nuclei \u2192 primary end"
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-07",
+        "subject": "Biology",
+        "query": "Explain DNA replication semi-conservative mechanism and Meselson-Stahl experiment.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.2803,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2803,
+            "snippet": "### 3.4 Cell Division  Mitosis (M-phase): - PMAT: Prophase, Metaphase, Anaphase, Telophase. - Produces 2 identical diploid cells. - Signific"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2036,
+            "snippet": "- Regeneration: G3P \u2192 RuBP. - Net: 3CO2 \u2192 1 triose phosphate. C4 Plants: - Kranz anatomy (bundle sheath + mesophyll cells). - Initial CO2 fi"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.1978,
+            "snippet": "Transcription: - Template strand \u2192 mRNA. - RNA polymerase; no primer needed; 5'\u21923'. - Start codon: AUG (methionine); Stop codons: UAA, UAG, "
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-08",
+        "subject": "Biology",
+        "query": "What is Darwinian natural selection and Hardy-Weinberg genetic equilibrium principle?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.2023,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2023,
+            "snippet": "# NEET UG 2026 \u2013 Biology Complete Study Material # Botany & Zoology \u2014 Official NMC/NTA Syllabus  Textbook-style notes following the official"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.1849,
+            "snippet": "Ecological pyramids: - Pyramid of Numbers: can be inverted (parasites on trees). - Pyramid of Biomass: inverted in aquatic ecosystems. - Pyr"
+          },
+          {
+            "rank": 3,
+            "subject": "unknown",
+            "topic": "Learning Path Guide",
+            "score": 0.1622,
+            "snippet": "NEET UG 2026 Learning Path Guide:  When beginning NEET preparation on NEET LearnPath, follow this structured subject-wise study path aligned"
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-09",
+        "subject": "Biology",
+        "query": "What are ecological pyramids of biomass, numbers, and 10 percent energy transfer law?",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.5128,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.5128,
+            "snippet": "Ecological pyramids: - Pyramid of Numbers: can be inverted (parasites on trees). - Pyramid of Biomass: inverted in aquatic ecosystems. - Pyr"
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.3364,
+            "snippet": "- Regeneration: G3P \u2192 RuBP. - Net: 3CO2 \u2192 1 triose phosphate. C4 Plants: - Kranz anatomy (bundle sheath + mesophyll cells). - Initial CO2 fi"
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2879,
+            "snippet": "# NEET UG 2026 \u2013 Biology Complete Study Material # Botany & Zoology \u2014 Official NMC/NTA Syllabus  Textbook-style notes following the official"
+          }
+        ]
+      },
+      {
+        "id": "NEET-BIO-10",
+        "subject": "Biology",
+        "query": "Explain recombinant DNA technology steps, restriction enzymes, and PCR cycles.",
+        "chunks_retrieved": 5,
+        "first_hit_rank": 1,
+        "reciprocal_rank": 1.0,
+        "top1_score": 0.3953,
+        "hits": {
+          "hit_at_1": true,
+          "hit_at_3": true,
+          "hit_at_5": true
+        },
+        "retrieved_samples": [
+          {
+            "rank": 1,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.3953,
+            "snippet": "Gel Electrophoresis: - DNA is negatively charged \u2192 migrates from cathode (\u2212) to anode (+). - Smaller fragments migrate faster (farther from "
+          },
+          {
+            "rank": 2,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2892,
+            "snippet": "Transcription: - Template strand \u2192 mRNA. - RNA polymerase; no primer needed; 5'\u21923'. - Start codon: AUG (methionine); Stop codons: UAA, UAG, "
+          },
+          {
+            "rank": 3,
+            "subject": "Biology",
+            "topic": "Biology",
+            "score": 0.2349,
+            "snippet": "- Total ATP from complete oxidation of glucose = 36\u201338 ATP. - Terminal electron acceptor: O2 \u2192 H2O. Fermentation (anaerobic): - Yeast: Pyruv"
+          }
+        ]
+      }
+    ]
+  },
+  "grounding_performance": {
+    "mean_groundedness_score": 0.5434,
+    "mean_hallucination_risk": 0.4566,
+    "evaluation_methodology": "Lexical token-overlap between reference syllabus concepts and top-3 retrieved chunks.",
+    "claims_compliance": "Conforms to Rule 3: Reports empirical token-overlap metrics; does not claim zero hallucination."
+  },
+  "timestamp": "2026-11-12T13:27:25.188753",
+  "vector_store_chunks": 37
+}

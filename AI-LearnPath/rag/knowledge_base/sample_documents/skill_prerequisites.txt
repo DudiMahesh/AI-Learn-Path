@@ -1,0 +1,19 @@
+NEET UG 2026 Skill Prerequisites & Foundation Guide:
+
+To maximize your score and concept retention in NEET preparation, NEET LearnPath recommends reviewing these prerequisite foundations:
+
+1. NEET Physics Prerequisites:
+Prerequisites: Basic Mathematics for Physics (Class 10-11 Algebra, Trigonometry, Vectors, Basic Differentiation & Integration d/dx and ∫dx).
+Why: 70% of numerical problems in Mechanics, Electrostatics, and Modern Physics require fluency with trigonometry (sin, cos, tan values), vector addition/resolution, and rate of change.
+
+2. NEET Physical & Inorganic Chemistry Prerequisites:
+Prerequisites: Mole Concept basics, Periodic Table fundamentals (valency, groups/periods), Atomic Structure basics (Bohr model, electrons/protons/neutrons).
+Why: Chemical equilibrium, thermodynamics, and periodic trends depend strictly on a clear grasp of molar mass calculations and electronic configuration.
+
+3. NEET Organic Chemistry Prerequisites:
+Prerequisites: IUPAC Nomenclature, hybridization (sp, sp2, sp3), electronic effects (inductive, resonance/mesomeric, hyperconjugation).
+Why: Reaction mechanisms (SN1, SN2, electrophilic addition) become intuitive once electron displacement effects are mastered.
+
+4. NEET Biology (Botany & Zoology) Prerequisites:
+Prerequisites: Cell structure, cell division (mitosis/meiosis), basics of plant & animal kingdom classification.
+Why: Genetics, plant physiology, human physiology, and ecology build directly on cellular mechanisms and taxonomic understanding.

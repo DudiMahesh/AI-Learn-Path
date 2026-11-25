@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-[#fafafa] text-zinc-900 transition-colors duration-200;
+  }
+
+  html.dark body {
+    background-color: #09090b !important;
+    color: #a1a1aa !important;
+  }
+
+  /* ─── Dark Mode Typography ─────────────────────────────── */
+  html.dark h1, html.dark h2, html.dark h3,
+  html.dark h4, html.dark h5, html.dark h6 {
+    color: #fafafa !important;
+  }
+
+  html.dark .text-slate-500, html.dark .text-gray-500,
+  html.dark .text-slate-400, html.dark .text-gray-400 {
+    color: #71717a !important;
+  }
+
+  html.dark .text-slate-600, html.dark .text-gray-600 {
+    color: #a1a1aa !important;
+  }
+
+  html.dark .text-slate-700, html.dark .text-gray-700,
+  html.dark .text-slate-800, html.dark .text-gray-800,
+  html.dark .text-slate-900, html.dark .text-gray-900 {
+    color: #e4e4e7 !important;
+  }
+
+  /* ─── Form Controls ───────────────────────────────────── */
+  input, textarea, select {
+    color: #18181b;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) !important;
+  }
+
+  html.dark input, html.dark textarea, html.dark select {
+    color: #e4e4e7 !important;
+    background-color: #111113 !important;
+    border-color: #27272a !important;
+  }
+
+  html.dark input:focus, html.dark textarea:focus, html.dark select:focus {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+  }
+
+  html.dark input::placeholder, html.dark textarea::placeholder {
+    color: #52525b !important;
+  }
+
+  /* ─── Dark Mode Surfaces ──────────────────────────────── */
+  html.dark .bg-white {
+    background-color: #111113 !important;
+  }
+
+  html.dark .bg-gray-50, html.dark .bg-slate-50,
+  html.dark .bg-slate-900, html.dark .bg-slate-950 {
+    background-color: #09090b !important;
+  }
+
+  html.dark .border-gray-100, html.dark .border-gray-200,
+  html.dark .border-slate-100, html.dark .border-slate-200,
+  html.dark .border-slate-700, html.dark .border-slate-800 {
+    border-color: #27272a !important;
+  }
+
+  /* ─── Brand gradient overrides ────────────────────────── */
+  .from-blue-600.to-purple-600,
+  .from-blue-600.to-purple-700,
+  .from-blue-600.via-indigo-600.to-purple-600,
+  .from-blue-600.via-indigo-600.to-purple-700,
+  .from-brand-blue.to-brand-purple,
+  .bg-blue-600 {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  }
+
+  .text-blue-600, .text-brand-blue {
+    color: #059669 !important;
+  }
+
+  html.dark .text-blue-400, html.dark .text-blue-500,
+  html.dark .text-blue-600, html.dark .text-brand-blue {
+    color: #34d399 !important;
+  }
+
+  html.dark .bg-blue-50, html.dark .bg-blue-100,
+  html.dark .bg-blue-900\/40, html.dark .bg-blue-900\/30,
+  html.dark .bg-blue-900\/20 {
+    background-color: rgba(16, 185, 129, 0.08) !important;
+    border-color: rgba(16, 185, 129, 0.15) !important;
+    color: #6ee7b7 !important;
+  }
+}
+
+/* ─── Scrollbar ───────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(113, 113, 122, 0.3);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 113, 122, 0.5);
+}
+
+/* ─── Exact Windows / Edge Native Style Scrollbar ──────────── */
+.material-scroll-container {
+  scrollbar-width: auto !important;
+  scrollbar-color: #858585 #2b2b2f !important;
+}
+
+.material-scroll-container::-webkit-scrollbar {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+}
+
+.material-scroll-container::-webkit-scrollbar-track {
+  background: #2b2b2f !important;
+  border-left: 1px solid #3f3f46 !important;
+}
+
+.material-scroll-container::-webkit-scrollbar-thumb {
+  background: #858585 !important;
+  border-radius: 2px !important;
+  border: 3px solid #2b2b2f !important;
+}
+
+.material-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a6a6a6 !important;
+}
+
+.material-scroll-container::-webkit-scrollbar-thumb:active {
+  background: #c8c8c8 !important;
+}
+
+.material-scroll-container::-webkit-scrollbar-button:single-button:vertical:decrement {
+  height: 16px !important;
+  display: block !important;
+  background-color: #2b2b2f !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23858585'><polygon points='50,20 15,75 85,75'/></svg>") !important;
+  background-size: 8px 8px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.material-scroll-container::-webkit-scrollbar-button:single-button:vertical:increment {
+  height: 16px !important;
+  display: block !important;
+  background-color: #2b2b2f !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23858585'><polygon points='50,80 15,25 85,25'/></svg>") !important;
+  background-size: 8px 8px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}

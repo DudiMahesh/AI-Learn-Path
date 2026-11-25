@@ -1,0 +1,9 @@
+[
+  "physics_score",
+  "chemistry_score",
+  "biology_score",
+  "daily_study_hours",
+  "time_per_question_sec",
+  "accuracy_rate",
+  "previous_mock_attempts"
+]

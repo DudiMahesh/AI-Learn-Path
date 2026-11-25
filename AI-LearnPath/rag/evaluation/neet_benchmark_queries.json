@@ -1,0 +1,242 @@
+[
+  {
+    "id": "NEET-PHY-01",
+    "subject": "Physics",
+    "query": "What is the formula for least count of a Vernier calliper and screw gauge in physics measurements?",
+    "expected_keywords": ["vernier", "least count", "screw gauge", "pitch", "divisions"],
+    "expected_topic": "Physics",
+    "reference_concept": "Vernier calliper least count is 1 MSD minus 1 VSD. Screw gauge least count equals pitch divided by circular scale divisions."
+  },
+  {
+    "id": "NEET-PHY-02",
+    "subject": "Physics",
+    "query": "Derive the horizontal range and maximum height formula in projectile motion.",
+    "expected_keywords": ["projectile", "range", "height", "sin", "theta", "velocity"],
+    "expected_topic": "Physics",
+    "reference_concept": "Horizontal range R = u² sin 2θ / g, and Maximum height H = u² sin²θ / 2g."
+  },
+  {
+    "id": "NEET-PHY-03",
+    "subject": "Physics",
+    "query": "Explain Newton's second law of motion and impulse momentum theorem.",
+    "expected_keywords": ["newton", "force", "momentum", "impulse", "acceleration"],
+    "expected_topic": "Physics",
+    "reference_concept": "Net force equals the rate of change of linear momentum F = dp/dt. Impulse equals change in momentum."
+  },
+  {
+    "id": "NEET-PHY-04",
+    "subject": "Physics",
+    "query": "What is the work-energy theorem and conservative force condition?",
+    "expected_keywords": ["work", "kinetic energy", "conservative", "potential energy"],
+    "expected_topic": "Physics",
+    "reference_concept": "Work done by all forces equals the change in kinetic energy ΔK = W_net."
+  },
+  {
+    "id": "NEET-PHY-05",
+    "subject": "Physics",
+    "query": "What is escape velocity from Earth's surface and orbital velocity formula?",
+    "expected_keywords": ["escape velocity", "gravitation", "orbital", "radius", "mass"],
+    "expected_topic": "Physics",
+    "reference_concept": "Escape velocity v_e = sqrt(2GM/R) = sqrt(2gR) ≈ 11.2 km/s."
+  },
+  {
+    "id": "NEET-PHY-06",
+    "subject": "Physics",
+    "query": "State the first and second laws of thermodynamics and Carnot engine efficiency.",
+    "expected_keywords": ["thermodynamics", "internal energy", "heat", "carnot", "efficiency"],
+    "expected_topic": "Physics",
+    "reference_concept": "First law: ΔQ = ΔU + ΔW. Carnot engine efficiency η = 1 - T2/T1."
+  },
+  {
+    "id": "NEET-PHY-07",
+    "subject": "Physics",
+    "query": "Explain simple harmonic motion time period for spring pendulum and simple pendulum.",
+    "expected_keywords": ["simple harmonic", "pendulum", "frequency", "time period", "spring"],
+    "expected_topic": "Physics",
+    "reference_concept": "Time period of a simple pendulum T = 2π sqrt(L/g); for spring-mass system T = 2π sqrt(m/k)."
+  },
+  {
+    "id": "NEET-PHY-08",
+    "subject": "Physics",
+    "query": "State Coulomb's law and electric field due to a point charge and dipole.",
+    "expected_keywords": ["coulomb", "electric field", "charge", "dipole", "permittivity"],
+    "expected_topic": "Physics",
+    "reference_concept": "Electrostatic force F = (1 / 4πε₀) * (q1 q2 / r²)."
+  },
+  {
+    "id": "NEET-PHY-09",
+    "subject": "Physics",
+    "query": "What is Snell's law of refraction and critical angle for total internal reflection?",
+    "expected_keywords": ["refraction", "snell", "total internal reflection", "critical angle", "refractive index"],
+    "expected_topic": "Physics",
+    "reference_concept": "Snell's law: n1 sin i = n2 sin r. Critical angle sin θ_c = n2 / n1 (where n1 > n2)."
+  },
+  {
+    "id": "NEET-PHY-10",
+    "subject": "Physics",
+    "query": "Explain Einstein photoelectric equation and de Broglie wavelength formula.",
+    "expected_keywords": ["photoelectric", "work function", "de broglie", "wavelength", "planck", "photon"],
+    "expected_topic": "Physics",
+    "reference_concept": "Einstein photoelectric equation: hν = Φ + K_max. De Broglie wavelength λ = h/p = h/mv."
+  },
+  {
+    "id": "NEET-CHEM-01",
+    "subject": "Chemistry",
+    "query": "What are quantum numbers and Pauli exclusion principle in atomic structure?",
+    "expected_keywords": ["quantum", "principal", "orbital", "pauli", "spin", "electron"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Four quantum numbers: n, l, m, s. Pauli exclusion principle states no two electrons can have identical four quantum numbers."
+  },
+  {
+    "id": "NEET-CHEM-02",
+    "subject": "Chemistry",
+    "query": "Explain periodic trends in ionization enthalpy and electronegativity across periods and groups.",
+    "expected_keywords": ["ionization", "electronegativity", "periodic", "atomic radius", "group"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Ionization enthalpy and electronegativity increase across a period from left to right and decrease down a group."
+  },
+  {
+    "id": "NEET-CHEM-03",
+    "subject": "Chemistry",
+    "query": "What is VSEPR theory and hybridization in chemical bonding for methane and water?",
+    "expected_keywords": ["hybridization", "vsepr", "geometry", "lone pair", "bonding", "tetrahedral"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "VSEPR theory predicts molecular shapes based on electron pair repulsion. Methane has sp3 tetrahedral, water has bent geometry."
+  },
+  {
+    "id": "NEET-CHEM-04",
+    "subject": "Chemistry",
+    "query": "State Hess's law of constant heat summation and Gibbs free energy equation.",
+    "expected_keywords": ["hess", "enthalpy", "gibbs", "entropy", "spontaneous", "thermodynamics"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Total enthalpy change is independent of the pathway. Gibbs free energy ΔG = ΔH - TΔS determines spontaneity."
+  },
+  {
+    "id": "NEET-CHEM-05",
+    "subject": "Chemistry",
+    "query": "Explain Le Chatelier's principle and equilibrium constant Kc and Kp expression.",
+    "expected_keywords": ["equilibrium", "le chatelier", "concentration", "pressure", "catalyst"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Le Chatelier's principle: A system at equilibrium responds to minimize external disturbances. Kp = Kc (RT)^Δn."
+  },
+  {
+    "id": "NEET-CHEM-06",
+    "subject": "Chemistry",
+    "query": "What is Raoult's law for ideal solutions and colligative properties?",
+    "expected_keywords": ["raoult", "vapour pressure", "colligative", "osmotic", "boiling point", "depression"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Raoult's law: partial vapor pressure is proportional to mole fraction. Colligative properties depend solely on solute particle count."
+  },
+  {
+    "id": "NEET-CHEM-07",
+    "subject": "Chemistry",
+    "query": "State Nernst equation for electrode potential and Faraday's laws of electrolysis.",
+    "expected_keywords": ["nernst", "electrode potential", "faraday", "electrolysis", "emf"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Nernst equation: E = E° - (RT/nF) ln Q. Faraday's first law m = ZIt."
+  },
+  {
+    "id": "NEET-CHEM-08",
+    "subject": "Chemistry",
+    "query": "Explain SN1 and SN2 reaction mechanisms in haloalkanes.",
+    "expected_keywords": ["sn1", "sn2", "nucleophilic", "carbocation", "inversion", "haloalkane"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "SN1 proceeds via carbocation intermediate with racemization; SN2 is a bimolecular single-step with Walden inversion."
+  },
+  {
+    "id": "NEET-CHEM-09",
+    "subject": "Chemistry",
+    "query": "What is crystal field theory and ligand field splitting in coordination compounds?",
+    "expected_keywords": ["crystal field", "coordination", "ligand", "octahedral", "splitting", "d-orbital"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Crystal field theory explains d-orbital splitting into eg and t2g sets under octahedral electrostatic fields."
+  },
+  {
+    "id": "NEET-CHEM-10",
+    "subject": "Chemistry",
+    "query": "What are peptide bonds and primary, secondary, tertiary structures of proteins in biomolecules?",
+    "expected_keywords": ["peptide", "protein", "amino acid", "helix", "biomolecule"],
+    "expected_topic": "Chemistry",
+    "reference_concept": "Proteins are polymers of amino acids joined by peptide bonds (-CO-NH-), exhibiting alpha-helix or beta-sheet secondary structures."
+  },
+  {
+    "id": "NEET-BIO-01",
+    "subject": "Biology",
+    "query": "What are the structural differences between prokaryotic and eukaryotic cells?",
+    "expected_keywords": ["prokaryotic", "eukaryotic", "nucleus", "membrane", "organelle", "ribosome"],
+    "expected_topic": "Biology",
+    "reference_concept": "Prokaryotes lack membrane-bound nucleus and organelles, possessing 70S ribosomes; eukaryotes have nucleus, organelles, and 80S ribosomes."
+  },
+  {
+    "id": "NEET-BIO-02",
+    "subject": "Biology",
+    "query": "Explain stages of mitosis and meiosis prophase I crossing over.",
+    "expected_keywords": ["mitosis", "meiosis", "prophase", "crossing over", "pachytene", "chromosome"],
+    "expected_topic": "Biology",
+    "reference_concept": "Crossing over occurs during pachytene of prophase I in meiosis mediated by recombinase enzyme."
+  },
+  {
+    "id": "NEET-BIO-03",
+    "subject": "Biology",
+    "query": "Explain the light reaction and Calvin cycle in C3 versus C4 photosynthesis.",
+    "expected_keywords": ["calvin", "photosynthesis", "chloroplast", "atp", "rubisco", "c3", "c4"],
+    "expected_topic": "Biology",
+    "reference_concept": "Light reactions produce ATP and NADPH. Calvin cycle fixes CO2 via RuBisCO in C3 and PEP carboxylase in C4 plants."
+  },
+  {
+    "id": "NEET-BIO-04",
+    "subject": "Biology",
+    "query": "Explain glycolysis steps, Krebs cycle, and electron transport chain ATP yield in cellular respiration.",
+    "expected_keywords": ["glycolysis", "krebs", "respiration", "mitochondria", "atp", "pyruvate"],
+    "expected_topic": "Biology",
+    "reference_concept": "Glycolysis breaks glucose into pyruvate. Krebs cycle and oxidative phosphorylation yield approximately 36 to 38 ATP."
+  },
+  {
+    "id": "NEET-BIO-05",
+    "subject": "Biology",
+    "query": "Describe human heart double circulation and cardiac cycle systole and diastole.",
+    "expected_keywords": ["circulation", "cardiac", "ventricle", "atrium", "systole", "diastole", "artery"],
+    "expected_topic": "Biology",
+    "reference_concept": "Double circulation consists of pulmonary and systemic loops. Cardiac cycle lasts 0.8 seconds comprising joint diastole and systole."
+  },
+  {
+    "id": "NEET-BIO-06",
+    "subject": "Biology",
+    "query": "Explain Mendel's laws of inheritance and dihybrid cross 9:3:3:1 phenotypic ratio.",
+    "expected_keywords": ["mendel", "inheritance", "allele", "dihybrid", "segregation", "dominant", "recessive"],
+    "expected_topic": "Biology",
+    "reference_concept": "Mendel's law of segregation and independent assortment yield a 9:3:3:1 phenotypic ratio in a dihybrid cross."
+  },
+  {
+    "id": "NEET-BIO-07",
+    "subject": "Biology",
+    "query": "Explain DNA replication semi-conservative mechanism and Meselson-Stahl experiment.",
+    "expected_keywords": ["dna", "replication", "meselson", "polymerase", "nitrogen", "semi-conservative"],
+    "expected_topic": "Biology",
+    "reference_concept": "Meselson and Stahl proved semi-conservative DNA replication using heavy isotope 15N and CsCl density gradient centrifugation."
+  },
+  {
+    "id": "NEET-BIO-08",
+    "subject": "Biology",
+    "query": "What is Darwinian natural selection and Hardy-Weinberg genetic equilibrium principle?",
+    "expected_keywords": ["natural selection", "darwin", "hardy-weinberg", "allele frequency", "evolution"],
+    "expected_topic": "Biology",
+    "reference_concept": "Hardy-Weinberg equilibrium states allele frequencies in a population remain constant: p² + 2pq + q² = 1 in absence of evolutionary forces."
+  },
+  {
+    "id": "NEET-BIO-09",
+    "subject": "Biology",
+    "query": "What are ecological pyramids of biomass, numbers, and 10 percent energy transfer law?",
+    "expected_keywords": ["ecological", "pyramid", "biomass", "energy", "trophic", "lindeman", "producer"],
+    "expected_topic": "Biology",
+    "reference_concept": "Lindeman's 10% law states only 10% of energy is transferred from one trophic level to the next; energy pyramids are always upright."
+  },
+  {
+    "id": "NEET-BIO-10",
+    "subject": "Biology",
+    "query": "Explain recombinant DNA technology steps, restriction enzymes, and PCR cycles.",
+    "expected_keywords": ["recombinant", "restriction enzyme", "pcr", "plasmid", "polymerase", "biotechnology"],
+    "expected_topic": "Biology",
+    "reference_concept": "Restriction endonucleases cut DNA at specific palindromic sequences; PCR amplifies DNA via denaturation, annealing, and extension."
+  }
+]
