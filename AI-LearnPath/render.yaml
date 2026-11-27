@@ -1,0 +1,49 @@
+services:
+  # Backend API (Flask + RAG) — Render "Python" web service
+  # In Render dashboard:
+  #   Root Directory: backend
+  #   Build Command:  pip install -r requirements.txt
+  #   Start Command:  gunicorn "app:create_app()" --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+  - type: web
+    name: ai-learnpath-backend
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn "app:create_app()" --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.11"
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: LLM_PROVIDER
+        value: groq
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: LLM_MODEL
+        value: llama-3.3-70b-versatile
+      - key: EMBEDDING_PROVIDER
+        value: chroma_default
+      - key: EMBEDDING_MODEL
+        value: chroma_default
+      - key: VECTOR_DB_TYPE
+        value: chroma
+      - key: VECTOR_DB_PATH
+        value: ./rag/chroma_db
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: SUPER_ADMIN_EMAIL
+        sync: false
+      - key: SUPER_ADMIN_PASSWORD
+        sync: false
