@@ -2,6 +2,7 @@ flask
 flask-cors
 flask-jwt-extended
 psycopg2-binary
+psycopg[binary]
 sqlalchemy
 flask-sqlalchemy
 bcrypt
@@ -19,4 +20,3 @@ markdown
 beautifulsoup4
 lxml
 werkzeug
-sentence-transformers
