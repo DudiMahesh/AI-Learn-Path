@@ -147,54 +147,46 @@ STRICT TYPOGRAPHY & FORMATTING RULES (CHATGPT & CLAUDE STANDARD):
             'elaborate', 'more details', 'detailed', 'more, more', 'more and more'
         ])
 
-        is_conversational_followup = bool(conversation_history) and (
-            'comprehensive textbook chapter masterclass' not in query_lower
+        is_chapter_masterclass = (
+            'comprehensive textbook chapter masterclass' in query_lower
+            or 'study guide' in query_lower
+            or 'full chapter' in query_lower
         )
+
+        is_conversational_followup = bool(conversation_history) and not is_chapter_masterclass
 
         if is_asking_for_different:
             user_msg += (
-                f"[FRESH PERSPECTIVE & DIVERSE CONTENT DIRECTIVE: The student explicitly requested DIFFERENT ANSWERS / A DIFFERENT DIAGRAM / NOVEL PERSPECTIVES on '{query}'. "
+                f"[FRESH PERSPECTIVE & MULTI-DIAGRAM + EXAMPLES DIRECTIVE: The student requested DIFFERENT ANSWERS / MORE DIAGRAMS / EXAMPLES on '{query}'. "
                 f"1. DO NOT REPEAT previous boilerplate definitions, identical analogies, or the same examples already given. "
-                f"2. Provide a completely DIFFERENT, fresh, high-resolution vector SVG diagram inside a ```svg ... ``` code block — for instance, an analytical infographic stat-card layout, comparative flowchart, or dynamic phase curve that illustrates a completely different angle of the concept. "
-                f"3. Present completely DIFFERENT worked numerical examples and real-world clinical/engineering scenarios with fresh values, distinct boundary conditions, and smart shortcut problem-solving methods. "
-                f"4. Provide fresh NCERT edge-case insights, counter-intuitive traps, and alternative mnemonics to give the student a truly novel, diverse perspective.]"
+                f"2. Provide TWO distinct, fresh, high-resolution vector SVG diagrams in separate ```svg ... ``` code blocks (`viewBox=\"0 0 760 400\"`, dark background `#030712`, light readable text `#f8fafc`/`#e2e8f0`, gradients, zero overlapping labels): Diagram 1 showing structure/mechanism, Diagram 2 showing a comparative infographic or graph. "
+                f"3. Present 3 to 4 completely DIFFERENT worked examples (conceptual + step-by-step solved numericals with Given, Formula, Substitution, Answer).]"
             )
         elif is_targeted_follow_up or (is_conversational_followup and not is_asking_for_more):
             user_msg += (
                 f"[TARGETED FOLLOW-UP DEEP DIVE DIRECTIVE: The student is asking a specific follow-up question: '{query}'. "
-                f"1. Directly and immediately answer this exact question in full granular depth WITHOUT repeating previous chapter introductions or generic 8-section boilerplate. "
-                f"2. Provide clear conversion tables / governing formulas / step-by-step arithmetic with standard SI units as relevant to '{query}'. "
-                f"3. Include a focused, high-resolution SVG vector diagram or infographic inside a ```svg ... ``` code block illustrating this specific topic. "
-                f"4. Include 2 worked examples and 2 practice MCQs specifically targeting '{query}'.]"
+                f"1. Directly and immediately answer this exact question with ChatGPT/Claude-level clarity and accuracy WITHOUT repeating previous chapter introductions or generic 8-section boilerplate. "
+                f"2. Include TWO focused, topic-specific SVG diagrams in separate ```svg ... ``` blocks (`viewBox=\"0 0 760 400\"`, `<rect width=\"760\" height=\"400\" rx=\"14\" fill=\"#030712\"/>`, `<defs>` gradients, bright text `#f8fafc`, non-overlapping labels): one visual schematic and one flowchart/graph/comparison. "
+                f"3. Provide 3 detailed worked examples (with full step-by-step numericals/cases) and 2 practice MCQs specifically targeting '{query}'.]"
             )
-        elif is_asking_for_more or depth == 'exhaustive':
+        elif is_asking_for_more or depth == 'exhaustive' or is_chapter_masterclass:
             user_msg += (
-                f"[MANDATORY MULTI-DIAGRAM & MAXIMUM DEPTH INSTRUCTION: The student explicitly requested 'MORE EXPLANATION, MORE DIAGRAMS, AND MAXIMUM INFORMATION' on '{query}'. "
-                f"1. You MUST include at least TWO distinct, high-resolution 3D vector SVG diagrams inside separate ```svg ... ``` code blocks: "
-                f"   - Diagram 1: Detailed 3D apparatus / microscopic structure / anatomical schematic with labels, gradients, and drop shadows. "
-                f"   - Diagram 2: Analytical graph curves / vector resolution / comparative energetic coordinate profile. "
-                f"2. Deliver complete, highly detailed textbook-chapter masterclass coverage across all 8 pedagogical sections: "
-                f"   1. Historical Context, First Principles & Definitions, "
-                f"   2. Full Mathematical Derivations & Theoretical Formulations, "
-                f"   3. High-Resolution Graphical 3D Vector Diagram 1 (SVG), "
-                f"   4. Exhaustive Multi-Level Mechanism & Component Breakdown, "
-                f"   5. Comprehensive Comparative Classification Matrix (Tables), "
-                f"   6. High-Resolution 3D Vector Diagram 2 (SVG) with 5+ Worked Examples & Real-World Case Studies (including step-by-step solved numericals), "
-                f"   7. NEET Traps & NCERT Margin Notes, and "
-                f"   8. Comprehensive Practice Question Bank (6-8 NEET-pattern MCQs with complete answer key and explanations for all options). "
-                f"3. Strictly format all mathematical formulas in clean, human-friendly notation without raw LaTeX brackets. Do not cut corners or summarize; write a rich, complete guide.]"
+                f"[MANDATORY MULTI-DIAGRAM & EXAMPLES MASTERCLASS INSTRUCTION: Provide a complete study masterclass on '{query}'. "
+                f"1. Include AT LEAST TWO distinct, high-resolution vector SVG diagrams inside separate ```svg ... ``` code blocks (`viewBox=\"0 0 760 400\"`, dark background `#030712`, `<defs>` gradients, bright text `#f8fafc`, zero overlapping labels). "
+                f"2. Deliver thorough coverage across all 8 pedagogical sections, including 4 to 6 diverse Worked Examples (conceptual, clinical/real-world, and step-by-step solved numericals) and a Practice Question Bank. "
+                f"3. Strictly format all mathematical formulas in clean notation without raw LaTeX align environments.]"
             )
         elif depth == 'quick':
             user_msg += (
-                f"[HIGH-YIELD REVISION INSTRUCTION: Provide a concise, high-yield 1-to-2-page summary on '{query}' covering definitions, "
-                f"3D vector SVG schematic in a ```svg block, 2 key examples, NEET traps, and 3 practice MCQs with answer key.]"
+                f"[HIGH-YIELD REVISION INSTRUCTION: Provide a concise, high-yield summary on '{query}' covering core concepts, "
+                f"2 topic-specific SVG diagrams in separate ```svg blocks (`viewBox=\"0 0 760 400\"`, dark `#030712` background, bright text), 3 worked examples, and 3 quick check questions.]"
             )
         else:
             user_msg += (
-                f"[MANDATORY COMPREHENSIVE GUIDE INSTRUCTION: Provide an IN-DEPTH 4-TO-5-PAGE EQUIVALENT COMPREHENSIVE STUDY GUIDE on '{query}'. "
-                f"Elaborate thoroughly across all 8 pedagogical sections with full definitions, complete step-by-step derivations/mechanisms, "
-                f"a high-resolution 3D SVG vector schematic in a ```svg block, comparative table matrix, 4+ worked examples/numericals with full calculations, "
-                f"NEET traps, and 5 practice MCQs with detailed explanations for all options.]"
+                f"[CHATGPT / CLAUDE EXPLANATION + MULTI-DIAGRAM + EXAMPLES DIRECTIVE: Answer '{query}' (whether a main topic, subtopic, or small topic) with maximum accuracy, clarity, and rich visual examples. "
+                f"1. Start with a clear, intuitive explanation and accurate core facts/mechanisms tailored directly to '{query}'. "
+                f"2. MANDATORY 2 DIAGRAMS: Generate TWO distinct, topic-specific SVG diagrams inside separate ```svg ... ``` code blocks specifically illustrating '{query}' (Diagram 1: structural/apparatus/mechanism schematic; Diagram 2: process flowchart, energy/phase graph, or infographic summary). Use `viewBox=\"0 0 760 400\"`, `<rect width=\"760\" height=\"400\" rx=\"14\" fill=\"#030712\"/>`, `<defs>` gradients, vibrant accent colors (`#10b981`, `#38bdf8`, `#f59e0b`, `#f43f5e`, `#a78bfa`), and crisp light `<text>` labels (`#f8fafc`, `#e2e8f0`) with zero overlapping boxes. "
+                f"3. MANDATORY WORKED EXAMPLES: Always provide 3 to 4 clear, detailed Worked Examples (including real-world/clinical cases and step-by-step solved numericals with Given, Formula, Substitution, and Final Answer) plus a summary comparison table.]"
             )
         
         messages.append({

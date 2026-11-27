@@ -13,5 +13,7 @@ export const ragService = {
   }).then(r => r.data),
   getDocuments: () => api.get('/api/rag/documents').then(r => r.data),
   deleteDocument: (id) => api.delete(`/api/rag/documents/${id}`).then(r => r.data),
-  reindexDocuments: () => api.post('/api/rag/documents/reindex').then(r => r.data)
+  reindexDocuments: () => api.post('/api/rag/documents/reindex').then(r => r.data),
+  generateVisual: (question, subject = '', answer = '', regenerate = false) =>
+    api.post('/api/visual/generate', { question, subject, answer, regenerate }).then(r => r.data)
 };

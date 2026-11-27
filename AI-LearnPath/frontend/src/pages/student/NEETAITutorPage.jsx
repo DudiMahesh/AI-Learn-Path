@@ -11,6 +11,7 @@ import { SUBJECTS_CONFIG } from '../../data/neetCurriculumData';
 import { synthesizeVectorDiagram } from '../../utils/vectorDiagramSynthesizer';
 import { getUnitMasterclass } from '../../data/neetUnitTextbooks';
 import { formatMathString, normalizeMathDelimiters, formatDisplayMathBlock, SUB_MAP, SUP_MAP, renderMathPart, renderItalicAndMath, renderInlineFormatted } from '../../utils/mathUtils';
+import VisualExplanationCard from '../../components/VisualExplanationCard';
 
 const SubjectIcon = ({ id, size = 18 }) => {
   if (id === 'physics')   return <Zap size={size} />;
@@ -1152,9 +1153,11 @@ export function FormattedMessageContent({ text, isUser, theme, textSize = 'base'
           const header = isLangTag ? firstLine.toLowerCase() : '';
           const codeBody = isLangTag ? lines.slice(1).join('\n').trim() : segment.trim();
 
+          const shortTopic = (text || '').split('\n').find(l => l.trim().length > 2)?.slice(0, 100) || '';
+
           // 1. Check if it's already an SVG block (intercept crude SVGs with synthesizer)
           if (header === 'svg' || (codeBody.includes('<svg') && codeBody.includes('</svg>'))) {
-            const finalSvg = synthesizeVectorDiagram(codeBody, '', theme?.name || 'NEET Concept');
+            const finalSvg = synthesizeVectorDiagram(codeBody, shortTopic, theme?.name || 'NEET Concept');
             return (
               <Graphical3DDiagram
                 key={sIdx}
@@ -1174,7 +1177,7 @@ export function FormattedMessageContent({ text, isUser, theme, textSize = 'base'
 
           // If it is a diagram or schematic, synthesize a high-resolution 3D Vector SVG
           if (isDiagram) {
-            const synthesizedSvg = synthesizeVectorDiagram(codeBody, '', theme?.name || 'NEET Concept');
+            const synthesizedSvg = synthesizeVectorDiagram(codeBody, shortTopic, theme?.name || 'NEET Concept');
             return (
               <Graphical3DDiagram
                 key={sIdx}
@@ -1461,10 +1464,13 @@ export default function NEETAITutorPage() {
   useEffect(() => {
     if (location.state?.autoQuery && !autoQueryHandled.current) {
       autoQueryHandled.current = true;
-      if (location.state?.subject && SUBJECTS_CONFIG[location.state.subject.toLowerCase()]) {
-        setActiveSubject(location.state.subject.toLowerCase());
+      const targetSub = location.state?.subject && SUBJECTS_CONFIG[location.state.subject.toLowerCase()]
+        ? location.state.subject.toLowerCase()
+        : activeSubject;
+      if (targetSub !== activeSubject) {
+        setActiveSubject(targetSub);
       }
-      sendMessage(location.state.autoQuery);
+      sendMessage(location.state.autoQuery, 'exhaustive', targetSub);
     }
   }, [location.state]);
 
@@ -1479,13 +1485,20 @@ export default function NEETAITutorPage() {
     setShowQuickPrompts(false);
     setStudyDepth('exhaustive');
     setActiveTopic(prev => ({ ...prev, [activeSubject]: unit.title }));
-    const prompt = `Explain ${unit.title} (Unit ${unit.number} in NEET ${cfg.shortTitle}): Comprehensive Textbook Chapter Masterclass covering definitions, mathematical derivations, 3D vector diagrams, mechanisms, comparison tables, worked examples with solved numericals, NEET high-yield traps, and practice question bank.`;
-    sendMessage(prompt);
+    const subtopicsText = Array.isArray(unit.topics) && unit.topics.length > 0
+      ? ` Cover ALL subtopics in this chapter: ${unit.topics.join(', ')}.`
+      : '';
+    const prompt = `Explain ${unit.title} (Unit ${unit.number} in NEET ${cfg.shortTitle}): Comprehensive Textbook Chapter Masterclass.${subtopicsText} Include complete explanations, 2+ high-resolution 3D vector diagrams/infographics, mathematical derivations, comparison tables, 4+ worked examples with step-by-step solved numericals, NEET high-yield traps, and practice MCQs.`;
+    sendMessage(prompt, 'exhaustive', activeSubject);
   };
 
-  const sendMessage = async (msgOverride) => {
+  const sendMessage = async (msgOverride, depthOverride, subjectOverride) => {
     const rawMsg = (msgOverride || chatInput).trim();
     if (!rawMsg || loading) return;
+    const targetSub = subjectOverride || activeSubject;
+    const targetCfg = SUBJECTS_CONFIG[targetSub] || cfg;
+    const targetDepth = depthOverride || studyDepth;
+
     setChatInput('');
     setShowUnitsCarousel(false);
     setShowQuickPrompts(false);
@@ -1496,7 +1509,7 @@ export default function NEETAITutorPage() {
       lower.includes('deep dive') || lower.includes('further') || lower === 'more' ||
       (lower.includes('why') && lower.length < 25);
 
-    const currentTopicForSubject = activeTopic[activeSubject] || `${cfg.shortTitle} Core Topics`;
+    const currentTopicForSubject = activeTopic[targetSub] || `${targetCfg.shortTitle} Core Topics`;
 
     let userPromptToSend = rawMsg;
     if (isFollowUp) {
@@ -1505,7 +1518,7 @@ export default function NEETAITutorPage() {
 
     setMessages(prev => ({
       ...prev,
-      [activeSubject]: [...prev[activeSubject], { role: 'user', text: rawMsg }]
+      [targetSub]: [...(prev[targetSub] || []), { role: 'user', text: rawMsg }]
     }));
     setLoading(true);
 
@@ -1514,19 +1527,20 @@ export default function NEETAITutorPage() {
       const headers = { 'Content-Type': 'application/json' };
       if (token) headers['Authorization'] = `Bearer ${token}`;
 
-      const res = await fetch('/api/rag/chat', {
+      const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+      const res = await fetch(`${apiBase}/api/rag/chat`, {
         method: 'POST',
         headers,
         body: JSON.stringify({
           message: userPromptToSend,
-          conversation_id: conversationIds[activeSubject],
-          subject: cfg.shortTitle,
-          depth: studyDepth,
+          conversation_id: conversationIds[targetSub],
+          subject: targetCfg.shortTitle,
+          depth: targetDepth,
           context: {
             exam: 'NEET (UG) 2026',
-            subject: cfg.shortTitle,
+            subject: targetCfg.shortTitle,
             topic: currentTopicForSubject,
-            depth: studyDepth,
+            depth: targetDepth,
             curriculum: 'NMC / NTA Official Syllabus'
           }
         })
@@ -1538,18 +1552,19 @@ export default function NEETAITutorPage() {
       if (!reply) throw new Error('Empty response');
 
       if (data?.data?.conversation_id) {
-        setConversationIds(prev => ({ ...prev, [activeSubject]: data.data.conversation_id }));
+        setConversationIds(prev => ({ ...prev, [targetSub]: data.data.conversation_id }));
       }
 
+      const visualPayload = data?.data?.visual || data?.visual || null;
       setMessages(prev => ({
         ...prev,
-        [activeSubject]: [...prev[activeSubject], { role: 'assistant', text: reply }]
+        [targetSub]: [...(prev[targetSub] || []), { role: 'assistant', text: reply, visual: visualPayload, question: rawMsg }]
       }));
     } catch {
-      const fallback = generateFallbackReply(rawMsg, cfg.shortTitle, currentTopicForSubject);
+      const fallback = generateFallbackReply(rawMsg, targetCfg.shortTitle, currentTopicForSubject);
       setMessages(prev => ({
         ...prev,
-        [activeSubject]: [...prev[activeSubject], { role: 'assistant', text: fallback }]
+        [targetSub]: [...(prev[targetSub] || []), { role: 'assistant', text: fallback }]
       }));
     } finally {
       setLoading(false);
@@ -1913,6 +1928,23 @@ export default function NEETAITutorPage() {
                 )}
 
                 <FormattedMessageContent text={msg.text} isUser={isUser} theme={theme} textSize={textSize} />
+
+                {!isUser && (
+                  <VisualExplanationCard
+                    visual={msg.visual}
+                    question={msg.question || currentMessages[i - 1]?.text || cfg.shortTitle}
+                    answer={msg.text}
+                    subject={cfg.shortTitle}
+                    onVisualUpdate={(nextVisual) => {
+                      setMessages(prev => ({
+                        ...prev,
+                        [activeSubject]: (prev[activeSubject] || []).map((m, mIdx) =>
+                          mIdx === i ? { ...m, visual: nextVisual } : m
+                        )
+                      }));
+                    }}
+                  />
+                )}
 
                 {!isUser && (
                   <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-xs text-slate-400 dark:text-zinc-400 flex-wrap gap-2">

@@ -68,6 +68,26 @@ def do_chat():
             
     # Run RAG Chat
     result = rag_chat(user.id, conv.id, message, history, user_context)
+
+    # Generate syllabus-grounded educational visual metadata (separate module)
+    visual_data = None
+    try:
+        from services.visual_learning_service import generate_educational_visual
+        from services.rag_service import get_pipeline
+        retrieved_chunks = []
+        try:
+            pipeline = get_pipeline()
+            retrieved_chunks = pipeline.retriever.retrieve_with_context(message, user_context, top_k=4)
+        except Exception:
+            retrieved_chunks = []
+        visual_data = generate_educational_visual(
+            question=message,
+            explicit_subject=user_context.get('subject'),
+            retrieved_chunks=retrieved_chunks,
+            rag_answer=result.get('answer', '')
+        )
+    except Exception:
+        visual_data = None
     
     ai_msg = RAGMessage(
         conversation_id=conv.id,
@@ -81,7 +101,8 @@ def do_chat():
         'conversation_id': conv.id,
         'answer': result.get('answer'),
         'sources': result.get('sources', []),
-        'retrieval_used': result.get('retrieval_used', False)
+        'retrieval_used': result.get('retrieval_used', False),
+        'visual': visual_data
     })
 
 @rag_bp.route('/conversations', methods=['GET'])

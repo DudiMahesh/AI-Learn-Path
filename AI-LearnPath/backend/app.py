@@ -8,9 +8,21 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    CORS(app, 
-         origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:5173", "http://127.0.0.1:3000", "http://127.0.0.1:3001"],
-         supports_credentials=True,
+    import os
+    cors_env = os.getenv("CORS_ORIGINS", "")
+    if cors_env.strip() == "*":
+        allowed_origins = "*"
+    else:
+        default_origins = [
+            "http://localhost:3000", "http://localhost:3001", "http://localhost:5173",
+            "http://127.0.0.1:3000", "http://127.0.0.1:3001"
+        ]
+        extra_origins = [o.strip() for o in cors_env.split(",") if o.strip()]
+        allowed_origins = list(dict.fromkeys(default_origins + extra_origins))
+
+    CORS(app,
+         origins=allowed_origins,
+         supports_credentials=(allowed_origins != "*"),
          allow_headers=["Content-Type", "Authorization"],
          methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
     JWTManager(app)
@@ -44,6 +56,7 @@ def create_app(config_class=Config):
     from routes.admin import admin_bp
     from routes.what_if import what_if_bp
     from routes.search import search_bp
+    from routes.visual import visual_bp
 
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
     app.register_blueprint(profile_bp, url_prefix='/api/profile')
@@ -57,6 +70,7 @@ def create_app(config_class=Config):
     app.register_blueprint(admin_bp, url_prefix='/api/admin')
     app.register_blueprint(what_if_bp, url_prefix='/api/what-if')
     app.register_blueprint(search_bp, url_prefix='/api/search')
+    app.register_blueprint(visual_bp, url_prefix='/api/visual')
 
     # Auto-create tables (works for SQLite and PostgreSQL with robust fallback)
     with app.app_context():

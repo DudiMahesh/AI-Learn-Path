@@ -424,7 +424,12 @@ export default function StudyChapterPage() {
             </button>
 
             <button
-              onClick={() => navigate('/courses/ai-tutor')}
+              onClick={() => navigate('/courses/ai-tutor', {
+                state: {
+                  subject: activeSubject,
+                  autoQuery: `Explain ${activeChapter?.title || 'this chapter'} (Unit ${activeChapter?.chapterNumber || 1} in NEET ${currentCfg.title || activeSubject}): Comprehensive Textbook Chapter Masterclass. Cover ALL subtopics (${(activeChapter?.topics || []).join(', ')}), definitions, mathematical derivations, 2+ high-resolution 3D vector diagrams/infographics, comparison tables, 4+ worked examples with solved numericals, NEET traps, and practice MCQs.`
+                }
+              })}
               className="px-4 py-2.5 rounded-xl text-sm font-semibold bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700/80 flex items-center gap-2 transition-all cursor-pointer"
             >
               <Bot className="w-4 h-4 text-emerald-400" />
@@ -644,7 +649,12 @@ export default function StudyChapterPage() {
                   </p>
                 </div>
                 <button
-                  onClick={() => navigate('/courses/ai-tutor')}
+                  onClick={() => navigate('/courses/ai-tutor', {
+                    state: {
+                      subject: activeSubject,
+                      autoQuery: `Explain ${activeChapter?.title || 'this chapter'} (Unit ${activeChapter?.chapterNumber || 1} in NEET ${currentCfg.title || activeSubject}): Comprehensive Textbook Chapter Masterclass. Cover ALL subtopics (${(activeChapter?.topics || []).join(', ')}), definitions, mathematical derivations, 2+ high-resolution 3D vector diagrams/infographics, comparison tables, 4+ worked examples with solved numericals, NEET traps, and practice MCQs.`
+                    }
+                  })}
                   className="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <Bot className="w-3.5 h-3.5" />

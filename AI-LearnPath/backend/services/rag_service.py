@@ -26,8 +26,7 @@ def get_pipeline():
             vec_store = get_vector_store()
             retriever = RAGRetriever(vec_store, emb_provider)
             prompt_builder = PromptBuilder()
-            from backend.config.settings import Config
-            provider_name = Config.LLM_PROVIDER or os.getenv('LLM_PROVIDER', 'grok')
+            provider_name = os.getenv('LLM_PROVIDER', 'groq')
             llm_provider = get_llm_provider(provider_name)
             
             _pipeline_instance = RAGPipelineService(
